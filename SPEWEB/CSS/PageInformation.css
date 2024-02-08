@@ -1,0 +1,136 @@
+﻿body {
+}
+.LblTitle
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #FFFF66;
+	text-align: left;
+	background-color: #3366CC;
+}
+
+.lblPrint
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #FFFF66;
+	text-align: center;
+	background-color: #3366CC;
+	margin-left: 8px;
+}
+.lblMessage
+{
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #008000;
+	background-color: #808080;
+}
+.lbltext
+{
+	font-family: 'Times New Roman' , Times, serif;
+	font-size: 12px;
+	color: #FF0066;
+	text-align: right;
+}
+.ddl
+{
+	font-weight: normal;
+	border-style: none;
+	border-width:thick;
+	font-size:12px;
+}
+
+.lblgralign
+{
+	text-align: right;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.lbltextColor
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #000080;
+	margin-left: 0px;
+	text-align:right;
+	font-weight:bold;
+	margin-top: 0px;
+}
+
+.gridtext
+{
+}
+
+
+.gvalignleft
+{
+	font-size: 12px;
+	font-style: normal;
+	text-align: left;
+	margin-top: 0px;
+}
+
+.lbtnFormat
+{
+	
+	border: 1px solid #9900CC;
+	font-size: 12px;
+	color: #0000FF;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	text-align: center;
+	background-color: #FFCCFF;
+	height: 17px;
+}
+.txtboxformat
+{
+	border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    font-size: 12px;
+	font-weight: normal;
+	margin-right: 0px;
+   text-align: left;
+    margin-left: 0px;
+}
+.txtboxformatl
+{
+	border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    font-size: 12px;
+	    font-weight: normal;
+	margin-right: 0px;
+    text-align: right;
+}
+
+.ddlbwdthnone
+{
+	font-weight: normal;
+	border-style: none;
+	border-width: inherit;
+	font-size: 12px;
+}
+
+
+.listcomapny
+{
+    background-color: #FFFFFF;
+    border-bottom-style: solid;
+    border-right-color: #000080;
+}
+
+.UpdateButton
+{
+  
+   border-style:none;
+   color:Yellow;
+    text-align: center;
+}

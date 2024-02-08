@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="RMGiEntityC_81_HrmF_92_Mgt">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>ec4530c5-3bf7-469b-8fdf-4a90872368c9</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="RMGiEntityC_81_HrmF_92_Mgt1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a825278d-8a16-4277-8a66-cb35e2c7990b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>RMGiEntityC_81_HrmF_92_Mgt</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="birthdate">
+          <DataField>birthdate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="bloodg">
+          <DataField>bloodg</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="comcod">
+          <DataField>comcod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="compadd">
+          <DataField>compadd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="company">
+          <DataField>company</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="companyname">
+          <DataField>companyname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="deptcode">
+          <DataField>deptcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="desig">
+          <DataField>desig</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="desigid">
+          <DataField>desigid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empaddress">
+          <DataField>empaddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empid">
+          <DataField>empid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empimage">
+          <DataField>empimage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="empimage1">
+          <DataField>empimage1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empname">
+          <DataField>empname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empsign">
+          <DataField>empsign</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idcardno">
+          <DataField>idcardno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Idcardvaldate">
+          <DataField>Idcardvaldate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="joindate">
+          <DataField>joindate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="mangerempsign">
+          <DataField>mangerempsign</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="mangmobile">
+          <DataField>mangmobile</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rowid">
+          <DataField>rowid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="secid">
+          <DataField>secid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="section">
+          <DataField>section</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="slength">
+          <DataField>slength</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>RMGiEntity.C_81_Hrm.F_92_Mgt</rd:DataSetName>
+        <rd:TableName>empInfo</rd:TableName>
+        <rd:ObjectDataSourceType>RMGiEntity.C_81_Hrm.F_92_Mgt.BO_EmpDashboard+empInfo, RMGiEntity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>RMGiEntityC_81_HrmF_92_Mgt1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="birthdate">
+          <DataField>birthdate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="bloodg">
+          <DataField>bloodg</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="comcod">
+          <DataField>comcod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="compadd">
+          <DataField>compadd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="company">
+          <DataField>company</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="companyname">
+          <DataField>companyname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="deptcode">
+          <DataField>deptcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="desig">
+          <DataField>desig</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="desigid">
+          <DataField>desigid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empaddress">
+          <DataField>empaddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empid">
+          <DataField>empid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EMPIMAGE">
+          <DataField>EMPIMAGE</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="empimage1">
+          <DataField>empimage1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empname">
+          <DataField>empname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="empsign">
+          <DataField>empsign</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idcardno">
+          <DataField>idcardno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Idcardvaldate">
+          <DataField>Idcardvaldate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="joindate">
+          <DataField>joindate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="mangerempsign">
+          <DataField>mangerempsign</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="mangmobile">
+          <DataField>mangmobile</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rowid">
+          <DataField>rowid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="secid">
+          <DataField>secid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="section">
+          <DataField>section</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="slength">
+          <DataField>slength</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>RMGiEntity.C_81_Hrm.F_92_Mgt</rd:DataSetName>
+        <rd:TableName>empInfo</rd:TableName>
+        <rd:ObjectDataSourceType>RMGiEntity.C_81_Hrm.F_92_Mgt.BO_EmpDashboard+empInfo, RMGiEntity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.62222in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>2.4675in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle1">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle2">
+                              <ReportItems>
+                                <Image Name="Image3">
+                                  <Source>Database</Source>
+                                  <Value>=First(Fields!empimage.Value, "DataSet1")</Value>
+                                  <MIMEType>image/png</MIMEType>
+                                  <Sizing>Fit</Sizing>
+                                  <Top>0.17361in</Top>
+                                  <Left>2.24722in</Left>
+                                  <Height>1.38889in</Height>
+                                  <Width>1.08333in</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
+                                <Textbox Name="Textbox8">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!empname.Value</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>0.93542in</Top>
+                                  <Left>0.21389in</Left>
+                                  <Height>0.25in</Height>
+                                  <Width>1.57653in</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox11">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>= "ID: " &amp; Fields!idcardno.Value</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>9pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>1.17431in</Top>
+                                  <Left>0.21562in</Left>
+                                  <Height>0.2125in</Height>
+                                  <Width>1.57501in</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox14">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Blood Group: " &amp; Fields!bloodg.Value</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox1</rd:DefaultName>
+                                  <Top>1.40348in</Top>
+                                  <Left>0.21389in</Left>
+                                  <Height>0.2125in</Height>
+                                  <Width>1.57257in</Width>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Image Name="Image1">
+                                  <Source>Embedded</Source>
+                                  <Value>edison_Group</Value>
+                                  <Sizing>FitProportional</Sizing>
+                                  <Top>0.17361in</Top>
+                                  <Left>0.27271in</Left>
+                                  <Height>0.57292in</Height>
+                                  <Width>1.29167in</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
+                                <Image Name="Image5">
+                                  <Source>Embedded</Source>
+                                  <Value>Card2</Value>
+                                  <Sizing>FitProportional</Sizing>
+                                  <Top>1.90903in</Top>
+                                  <Height>0.26908in</Height>
+                                  <Width>3.52743in</Width>
+                                  <ZIndex>5</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.11681in</Top>
+                              <Left>0.09479in</Left>
+                              <Height>2.17812in</Height>
+                              <Width>3.52743in</Width>
+                              <Style>
+                                <Border>
+                                  <Color>Silver</Color>
+                                  <Style>Solid</Style>
+                                  <Width>0.5pt</Width>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Left>0.14792in</Left>
+            <Height>2.4675in</Height>
+            <Width>3.62222in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.64251in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>2.4675in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle3">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle5">
+                              <ReportItems>
+                                <Textbox Name="Textbox39">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison Power Bangladesh Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Right</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox38</rd:DefaultName>
+                                  <Top>0.07778in</Top>
+                                  <Left>0.10799in</Left>
+                                  <Height>0.18194in</Height>
+                                  <Width>1.57604in</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox23">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value EvaluationMode="Constant">Edison Properties Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox23</rd:DefaultName>
+                                  <Top>0.0882in</Top>
+                                  <Left>1.74305in</Left>
+                                  <Height>0.18194in</Height>
+                                  <Width>1.54792in</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox40">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>SB Tel Enterprises Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Right</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox38</rd:DefaultName>
+                                  <Top>0.2774in</Top>
+                                  <Left>0.10799in</Left>
+                                  <Height>0.15694in</Height>
+                                  <Width>1.57604in</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox24">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison Technologies Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox23</rd:DefaultName>
+                                  <Top>0.28782in</Top>
+                                  <Left>1.74305in</Left>
+                                  <Height>0.15694in</Height>
+                                  <Width>1.54792in</Width>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox41">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison  Footwear Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Right</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox38</rd:DefaultName>
+                                  <Top>0.47759in</Top>
+                                  <Left>0.10799in</Left>
+                                  <Height>0.16944in</Height>
+                                  <Width>1.57604in</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox25">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison  Electronics Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox23</rd:DefaultName>
+                                  <Top>0.47759in</Top>
+                                  <Left>1.74305in</Left>
+                                  <Height>0.16944in</Height>
+                                  <Width>1.54792in</Width>
+                                  <ZIndex>5</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox42">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison  Logistics Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Right</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox38</rd:DefaultName>
+                                  <Top>0.6772in</Top>
+                                  <Left>0.10799in</Left>
+                                  <Height>0.18194in</Height>
+                                  <Width>1.57604in</Width>
+                                  <ZIndex>6</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox26">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison  Healthcare  Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox23</rd:DefaultName>
+                                  <Top>0.6772in</Top>
+                                  <Left>1.74305in</Left>
+                                  <Height>0.18194in</Height>
+                                  <Width>1.54792in</Width>
+                                  <ZIndex>7</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox43">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Edison Express Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Right</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox38</rd:DefaultName>
+                                  <Top>0.89644in</Top>
+                                  <Left>0.10799in</Left>
+                                  <Height>0.18194in</Height>
+                                  <Width>1.57604in</Width>
+                                  <ZIndex>8</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox27">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>PETE LCO bangladesh Lth</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox23</rd:DefaultName>
+                                  <Top>0.88602in</Top>
+                                  <Left>1.74305in</Left>
+                                  <Height>0.18194in</Height>
+                                  <Width>1.54792in</Width>
+                                  <ZIndex>9</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox44">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Pink Creative Ltd</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox38</rd:DefaultName>
+                                  <Top>1.09605in</Top>
+                                  <Left>0.10894in</Left>
+                                  <Height>0.19444in</Height>
+                                  <Width>3.18021in</Width>
+                                  <ZIndex>10</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox29">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>If found , Please return this card to:</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>7pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Rangs Badylonia, Level-6, 246, Bir Uttam Mir Shawkat Road</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>7pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Tajgoan I/A,  Tejjoan, Dhaka-1208</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>7pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>www.edison-bd.com</Value>
+                                          <Style>
+                                            <FontFamily>cambria</FontFamily>
+                                            <FontSize>7pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox23</rd:DefaultName>
+                                  <Top>1.31827in</Top>
+                                  <Left>0.10894in</Left>
+                                  <Height>0.51298in</Height>
+                                  <Width>3.18021in</Width>
+                                  <ZIndex>11</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Image Name="Image4">
+                                  <Source>Embedded</Source>
+                                  <Value>Card1</Value>
+                                  <Sizing>FitProportional</Sizing>
+                                  <Top>1.85902in</Top>
+                                  <Height>0.26354in</Height>
+                                  <Width>3.42952in</Width>
+                                  <ZIndex>12</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
+                              </ReportItems>
+                              <Top>0.1182in</Top>
+                              <Left>0.07779in</Left>
+                              <Height>2.12256in</Height>
+                              <Width>3.42952in</Width>
+                              <Style>
+                                <Border>
+                                  <Color>Silver</Color>
+                                  <Style>Solid</Style>
+                                  <Width>0.5pt</Width>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details1" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Left>3.7875in</Left>
+            <Height>2.4675in</Height>
+            <Width>3.64251in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>2.58208in</Height>
+        <Style />
+      </Body>
+      <Width>7.43001in</Width>
+      <Page>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <LeftMargin>0.25in</LeftMargin>
+        <RightMargin>0.25in</RightMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Logo">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="issuedat">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="validity">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="comnam">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="comadd">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="laimg1">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Auimg1">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfRows>4</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Logo</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>issuedat</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>validity</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>comnam</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>comadd</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>laimg1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>Auimg1</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="edison_Group">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="Card1">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAXIAAAAbCAYAAABhqAQvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RERGMEZFNEZEQTdCMTFFOEEwNkVFNzVEQzFEOEM0RDEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RERGMEZFNTBEQTdCMTFFOEEwNkVFNzVEQzFEOEM0RDEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEREYwRkU0RERBN0IxMUU4QTA2RUU3NURDMUQ4
+QzREMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEREYwRkU0RURBN0IxMUU4QTA2RUU3NURDMUQ4QzREMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrHlm90AAAMkSURBVHja7N1dSFNhHAbw5z3TSamg0xlWhDUvohS6CIuMvLDsJrqwUExM+0T6EPoWK3ehZpJZWCRYQVAUQXSTJJGQN5XkRRdJZBF5YUToNs3W1jZ32gRF2Kt0Vefj+V3JeY6w4wsPf9+dswlVVUFERPolpos8Z0Nt5AfBvwgR6V56WjJ6n9RJs+c9faivv4wJZOv8KsMYeNUyVdoKl5yIjOjIyWvS41s2r0du7mpDXeusIuc0TkTGMOqawMCgC5Nh+dbxxebTU1O7UeqbEzkRGbbMt5U0SjObbSGylqQacSInIjISK7y+MFpvPJWm507tgD092RBXyiInIsNye/zo6n4bKfRgTJbtyEBVWQHSbUksciIiLRt1/cTOijZpVlmWj6TEeBY5EZHW+X4H0ftyQJo1Oyt0/8bnTJELhLnaRGTQqdyLC62PpVnuqkzk563gRE5EpHXBUAgHalqlWcPZUl1P5TNFrvI+ciIysBFXEJ++BDD8dTy2CBWBFmcp7Gn6fOOTEzkRmUb03vKqQ9el2bq1DmQts+m9yDmRE5HxBUKTOOO8J81utVdjkV1/WyycyInIVNweH173f4TX64/JLBaBzqv7dbdfziInIvOV+VgQ28uvSDPH8gzkOPT1+D6LnIhMKRD0o+NOtzRrdO7W1VTOIiciU/J4AnjwqB+yD0hMSU1EUeEaFjkRkda53T4UFTdJsxOHt8Kuk6l8dpH7uKxEZDahkMCzF+9ijifEW3C3s0YXWyyzi3wS4Bd4EpG5jIx6cKm9S5otzUxCfl62VstcyIo88krFDy4rEZmJEHGRqVxF
+9bGb0rzpfAksmtuEVj1zTeRRKZET/FxaIjKT6BOf7weH8XnouzSvO16ssalc2OYr8ugJC4QIf5vaaSEiMgn3WAD7jt6WZoUFK+HI0sTj+9FvyIh5DF/6D4OqKosByy8uLRGZSTgcQm3DfWnW0XZQC1O5VXZwvp2fRC4rEZlqKvf40PdmCCPjsTfxWeMVVJZt+p9lPucHYil/8YtCUZSHXGIiMoPofnn5Xvnj+3t2bUSCNe5fvpwP0z0830l/BBgAMGvKz6gKADIAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="Card2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAXEAAAAbCAYAAACKn78sAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjI2NUZBRjZEQTdDMTFFODlCRTk5NDVBRUVBMEIyQkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjI2NUZBRjdEQTdDMTFFODlCRTk5NDVBRUVBMEIyQkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MjY1RkFGNERBN0MxMUU4OUJFOTk0NUFFRUEw
+QjJCQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MjY1RkFGNURBN0MxMUU4OUJFOTk0NUFFRUEwQjJCQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmsP/BEAAA4VSURBVHja7J0LWFVV2sf/+9w53BFQQCvE4aZiyqSjopOO6efXeMm8QJZp2cXRTD7zgtcGpUMa+VBqJKYVGeOtvH2OiamImpQOShdStEQgkYvcOfe9593rmKPAqI/WBMz6Pc9+ztp7rb3Wu/Za+7/etQ6sI0iSBA6Hw2nFeNPRjY6wRp/P0bGzrVdekEX8iUnzpKIyDbQaLWrqrVAqFRDpukatQnVNA5ycNI7Ust4Lt85QIShgNJqh1alZWBRFqFRKWK02CILguJ/yUSgULL18XS5PoRBgttigVitvmb8kSvdkn4xKqURdvQkuzjpYqHzFz3ZdL+Tu7bsxj59t/Lksm91+R/fJttTVmeGs11wrWwGz2crKFm8z6FqtdmpHFT13CXa7SPeo2HW5HRrX8V7skzEaLXB3019/hnJ5gkK4N/sof7lPytdtNjuruyiJMJus1M5aFv417buT/ivnZaO8dFo1K0Nuowb6dKJ7bpf/vfbftv9+NS5AuFZvx5mJ+oGLswYNDRb0/b0v3SsgfvFf0txc1E81toP62JnpL6/ofOb7WleFWk1p1VSe4/2pqamDh7srlCoJWjW9XyYTezZWu+KWdZPfQ9YPqf2t1D/lPiAj963GdbRT2+h0GlRW1cPTw5nV9XYo2KOSMxJRU2eCj7czfL01rG3t9H6KVKZWq2V2C6IR61YvEpiIR/SbTW1HxgsqPqZzOJxWAIkYCZ1Eh5NOU/LVwdeMdDGwcaot2/ZvWPbmwWek244+0k2DRkura1NEKGBC7vG3BIXjVMMFnMPhtKZFBJI2eVZBsyGT1OHdtOzT
+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
+4gAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>037a4091-3eb3-42ea-ac44-3f48deef6c50</rd:ReportID>
+</Report>

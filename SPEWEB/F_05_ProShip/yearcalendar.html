@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Content/Theme/calendar/bootstrap.min.css">
+  <script src="../Content/Theme/calendar/jquery.min.js"></script>
+  <script src="../Content/Theme/calendar/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="../Content/Theme/calendar/bootstrap-year-calendar.min.css">
+  
+  <script src="../Content/Theme/calendar/bootstrap-year-calendar.min.js"></script>
+  
+  
+
+</head>
+<body style="overflow: hidden;">
+
+    <div id="calendar" class="calendar" style="overflow-y: hidden; overflow-x: hidden;"></div>
+
+    <script>      
+       
+        var calendardata = [];
+
+       // var calendardata1 = [
+       //     {
+       //         id: "1",
+       //         name: "Weekend Day",
+       //         location: "Weekly Holiday",
+       //         startDate: new Date(2022, 3, 29),
+       //         endDate: new Date(2022, 3, 29),
+       //         typ: "WKD"
+       //     },
+       //     {
+       //         id: "2",
+       //         name: "Weekend Day",
+       //         location: "Weekly Holiday",
+       //         startDate: new Date(2022, 4, 29),
+       //         endDate: new Date(2022, 4, 29),
+       //         typ: "WKD"
+       //     }
+         
+       // ];
+       //// GetEvent('2022');
+       // function GetEvent(yearid) {
+       //     //   alert(formid.toString());
+       //     $.ajax({
+       //         type: "POST",
+       //         url: 'MasterCalendarSetup.aspx/GetFullYearEvent',
+       //         data: "{'yearid':'" + yearid + "'}",
+       //         contentType: "application/json; charset=utf-8",
+       //         dataType: "json",
+       //         success: function (response) {
+       //             // console.log(JSON.parse(response.d
+       //             console.log(response.d);
+       //             yearevents = response.d;
+                
+       //             $.each(yearevents, function (i, item) {
+       //                 calendardata.push({
+       //                     "id": item.sl, 
+       //                     "name": item.dstatusdet, "location": item.remarks,
+       //                     "startDate": new Date(2022, 3, 29),
+       //                     "endDate": new Date(2022, 4, 1),
+       //                     "typ": item.dstatus
+       //                 });
+                        
+       //             });
+       //             console.log(calendardata);
+       //         },
+       //         error: function (e) {
+       //             //  $("#divResult").html("Something Wrong."); fdfd
+       //         }
+       //     });
+       // }
+
+
+        
+        function editEvent(event) {
+            $('#event-modal input[name="event-index"]').val(event ? event.id : '');
+            $('#event-modal input[name="event-name"]').val(event ? event.name : '');
+            $('#event-modal input[name="event-location"]').val(event ? event.location : '');
+            $('#event-modal input[name="event-start-date"]').datepicker('update', event ? event.startDate : '');
+            $('#event-modal input[name="event-end-date"]').datepicker('update', event ? event.endDate : '');
+            $('#event-modal').modal();
+        }
+
+        function deleteEvent(event) {
+            var dataSource = $('#calendar').data('calendar').getDataSource();
+
+            for (var i in dataSource) {
+                if (dataSource[i].id == event.id) {
+                    dataSource.splice(i, 1);
+                    break;
+                }
+            }
+
+            $('#calendar').data('calendar').setDataSource(dataSource);
+        }
+
+        function saveEvent() {
+            var event = {
+                id: $('#event-modal input[name="event-index"]').val(),
+                name: $('#event-modal input[name="event-name"]').val(),
+                location: $('#event-modal input[name="event-location"]').val(),
+                startDate: $('#event-modal input[name="event-start-date"]').datepicker('getDate'),
+                endDate: $('#event-modal input[name="event-end-date"]').datepicker('getDate')
+            }
+
+            var dataSource = $('#calendar').data('calendar').getDataSource();
+
+            if (event.id) {
+                for (var i in dataSource) {
+                    if (dataSource[i].id == event.id) {
+                        dataSource[i].name = event.name;
+                        dataSource[i].location = event.location;
+                        dataSource[i].startDate = event.startDate;
+                        dataSource[i].endDate = event.endDate;
+                    }
+                }
+            }
+            else {
+                var newId = 0;
+                for (var i in dataSource) {
+                    if (dataSource[i].id > newId) {
+                        newId = dataSource[i].id;
+                    }
+                }
+                newId++;
+                event.id = newId;
+                dataSource.push(event);
+            }
+            $('#calendar').data('calendar').setDataSource(dataSource);
+            $('#event-modal').modal('hide');
+        }
+
+        $(function () { 
+            var currentYear = new Date().getFullYear();
+         //   console.log(currentYear);
+            $.ajax({
+                type: "POST",
+                url: 'MasterCalendarSetup.aspx/GetFullYearEvent',
+                data: "{'yearid':'" + currentYear + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    // console.log(JSON.parse(response.d
+                    console.log(response.d);
+                    yearevents = response.d;
+
+                    $.each(yearevents, function (i, item) {
+                        calendardata.push({
+                            id: item.sl,
+                            name: item.dstatusdet, "location": item.remarks,
+                            startDate: new Date(currentYear, parseInt(item.dayid.substring(4, 6))-1, parseInt(item.dayid.substring(6, 8))),
+                            endDate: new Date(currentYear, parseInt(item.dayid.substring(4, 6))-1, parseInt(item.dayid.substring(6, 8))),
+                            typ: item.dstatus
+                        });
+
+                    });
+                   // console.log(calendardata);
+                   
+
+                    $('#calendar').calendar({
+                        style: 'custom',
+                        displayWeekNumber: true,
+                        customDataSourceRenderer: function (element, date, events) {
+                            for (var i = 0; i < events.length; i++) {
+                                if (events[i].typ == 'WKD') {
+                                    $(element).css('background-color', 'red');
+                                    $(element).css('color', 'white');
+
+                                    // $(element).text($(element).text() + "_(!)");
+                                }
+                                if (events[i].typ == 'HOL') {
+                                    $(element).css('background-color', 'green');
+                                    $(element).css('color', 'white');
+
+                                }
+                            }
+                        },
+                        enableContextMenu: true,
+                        enableRangeSelection: true,
+                        contextMenuItems: [
+                            {
+                                text: 'Update',
+                                click: editEvent
+                            },
+                            {
+                                text: 'Delete',
+                                click: deleteEvent
+                            }
+                        ],
+                        selectRange: function (e) {
+                            editEvent({ startDate: e.startDate, endDate: e.endDate });
+                        },
+                        mouseOnDay: function (e) {
+                            if (e.events.length > 0) {
+                                var content = '';
+
+                                for (var i in e.events) {
+                                    content += '<div class="event-tooltip-content">'
+                                        + '<div class="event-name" style="color:' + e.events[i].color + '">' + e.events[i].name + '</div>'
+                                        + '<div class="event-location">' + e.events[i].location + '</div>'
+                                        + '</div>';
+                                }
+
+                                $(e.element).popover({
+                                    trigger: 'manual',
+                                    container: 'body',
+                                    html: true,
+                                    content: content
+                                });
+
+                                $(e.element).popover('show');
+                            }
+                        },
+                        mouseOutDay: function (e) {
+                            if (e.events.length > 0) {
+                                $(e.element).popover('hide');
+                            }
+                        },
+                        dayContextMenu: function (e) {
+                            $(e.element).popover('hide');
+                        },
+                        
+                        dataSource: calendardata
+                    });
+                },
+                error: function (e) {
+                    //  $("#divResult").html("Something Wrong."); fdfd
+                }
+            });
+          //  console.log("call main function");
+            
+           
+
+            $('#save-event').click(function () {
+                saveEvent();
+            });
+        });
+    </script>
+
+
+    
+</body>
+</html>

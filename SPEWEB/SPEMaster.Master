@@ -1,0 +1,1205 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SPEMaster.Master.cs" Inherits="SPEWEB.SPEMaster" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script runat="server">
+
+</script>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PinTech ERP</title>
+    <link rel="icon" type="image/ico" href="~/favicon.ico"/>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+        function submitform()
+        { document.getElementById("form1").submit(); }
+    </script>
+    
+    <link href="Content/bootstrap.icon-large.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="Content/asitCommonStyle.css" rel="stylesheet" />
+    <link href="Content/AppsStyle.css" rel="stylesheet" />
+    <link href="Content/AsitnoneResponsive.css" rel="stylesheet" />
+    <link href="Content/screen.css" rel="stylesheet" />
+    <link href="Content/wheelmenu.css" rel="stylesheet" />
+    <link href="Content/GridViewScrooling.css" rel="stylesheet" />
+
+    <link href="Content/chosen.css" rel="stylesheet" />
+
+    <link href="Content/cssrmg.css" rel="stylesheet" />
+
+    <link href="Content/bootstrap-multiselect.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Content/Theme/vendor/toastr/toastr.min.css">
+
+
+    <style>
+        .asit_container {
+            /*margin: 0 auto;*/
+            /*width: 94%;*/
+            width: 99%;
+        }
+
+        .container {
+            /*width: 94%;*/
+            width: 99%;
+        }
+        /*.fixdbtn{position:absolute;
+                 bottom:20px;
+                 left:0;
+                 z-index:500;
+        }*/
+
+
+
+        .lblmsg {
+            color: white;
+            border-width: 0 !important;
+            padding: 2px 10px;
+            font-size: 16px !important;
+            line-height: 19px;
+        }
+
+        .panelTopMenu {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background: whitesmoke none repeat scroll 0 0;
+            border-color: silver -moz-use-text-color;
+            border-image: none;
+            border-style: solid none;
+            border-width: 0;
+            display: block;
+            height: 30px;
+            width: 100%;
+        }
+
+
+
+        #main {
+            display: table;
+            height: 30px !important;
+            margin: 0 auto;
+        }
+
+        .panelTopMenu ul {
+            display: block !important;
+            height: 30px !important;
+        }
+
+            .panelTopMenu ul li {
+                float: left;
+                height: 30px !important;
+                line-height: 30px !important;
+                list-style: outside none none;
+                margin: 0 !important;
+            }
+
+                .panelTopMenu ul li a {
+                    color: green;
+                    float: left;
+                    font-family: Cambria;
+                    font-size: 14px;
+                    line-height: 30px !important;
+                    padding: 0 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    font-weight: bold;
+                }
+
+                    .panelTopMenu ul li a:hover {
+                        color: #fff;
+                        background: #939393;
+                    }
+
+        .userMenu ul {
+            border: medium none;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .userMenu li {
+            list-style: outside none none;
+            margin-bottom: -1px;
+        }
+
+            .userMenu li ul {
+                background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                margin-left: -64px;
+            }
+
+        .userMenu a {
+            color: #fff;
+            cursor: pointer;
+            height: 32px;
+            padding: 0;
+            position: relative;
+            width: auto;
+        }
+
+            .userMenu a:hover, .userMenu a:focus {
+                color: #0026ff;
+            }
+
+            .userMenu a:active {
+                right: 0;
+                top: 0;
+            }
+
+        /*.img-rounded {
+            border-radius: 6px !important;
+        }*/
+
+        .userInformation {
+            height: 60px;
+            left: -69px;
+            min-width: 193px;
+            top: 100%;
+        }
+
+            .userInformation a {
+                color: #000;
+            }
+
+            .userInformation.well {
+                /*min-height: 15px !important;*/
+                padding: 15px !important;
+                margin-right: 70px !important;
+                margin-bottom: 10px;
+                background-color: #CE8B70 !important;
+                border: 1px solid #e3e3e3 !important;
+                border-radius: 3px;
+                /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05) !important;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.05) !important;*/
+            }
+
+        /*.logout{
+             background-color: #CE8B70 !important;
+        }*/
+
+        .btn-primary {
+            color: #000 !important;
+            background-color: #fff !important;
+            border-color: #2e6da4;
+        }
+
+        .userInformation p {
+            color: #ffffff !important;
+            font-family: Cambria;
+            font-size: 13px;
+            line-height: 20px;
+            margin: 0;
+        }
+
+            .userInformation p spna {
+                font-size: 8px;
+                line-height: 10px;
+            }
+
+        #lblLoginInfo {
+            color: #ffffff;
+            font-family: Cambria;
+            font-size: 14px !important;
+            line-height: 15px;
+        }
+
+        .panelTopMenu ul li {
+            float: left;
+            list-style: outside none none;
+            position: relative;
+        }
+
+            .panelTopMenu ul li ul li {
+                width: 100%;
+            }
+
+        .pnlTitle {
+            width: 100%;
+        }
+
+
+
+        /*============SidePanelMenu================*/
+
+        .sidepnaelMenu {
+            position: fixed;
+            top: 30%;
+            right: 0;
+            position: absolute;
+            padding: 0px 0px;
+            background: #CA6621;
+            -webkit-border-radius: 5px 0 0 5px;
+            border-radius: 5px 0 0 5px;
+        }
+
+            .sidepnaelMenu .btn {
+                padding: 3px 6px;
+            }
+               .sidepnaelMenu1 {
+            position: fixed;
+            top: 30%;
+            left: 0;
+            position: absolute;
+            padding: 0px 0px;
+            background: #CA6621;
+            -webkit-border-radius: 5px 0 0 5px;
+            border-radius: 5px 0 0 5px;
+        }
+
+            .sidepnaelMenu1 .btn {
+                padding: 3px 6px;
+            }
+
+        .glypSideMenu {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .dropSideMenu {
+            width: 310px;
+            margin-left: -240px;
+            padding: 5px;
+            z-index: 500;
+        }
+        .dropSideMenu1 {
+            width: 310px;
+             /*margin-left: 0px;*/
+            padding: 5px;
+            z-index: 500;
+        }
+
+            .dropSideMenu li {
+                float: left;
+                margin: 2px;
+            }
+
+                .dropSideMenu li a {
+                    width: 80px;
+                    height: 80px;
+                    font-size: 13px;
+                    color: #000;
+                    display: block;
+                    text-align: center;
+                    background: #fff;
+                    padding: 20px 0;
+                    vertical-align: middle;
+                }
+
+        .dropFa {
+            font-size: 22px;
+        }
+
+        /*======================================*/
+        /* My CheckBox Style:Nahid
+=====================================*/
+        .myCkbox {
+            padding: 0 !important;
+        }
+
+            .myCkbox label:after,
+            .radio label:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+
+            .myCkbox .cr,
+            .radio .cr {
+                position: relative;
+                display: inline-block;
+                border: 1px solid #a9a9a9;
+                border-radius: .25em;
+                width: 1.3em;
+                height: 1.3em;
+                float: left;
+                margin-right: .5em;
+            }
+
+        .radio .cr {
+            border-radius: 50%;
+        }
+
+            .myCkbox .cr .cr-icon,
+            .radio .cr .cr-icon {
+                position: absolute;
+                font-size: .8em;
+                line-height: 0;
+                top: 50%;
+                left: 20%;
+            }
+
+            .radio .cr .cr-icon {
+                margin-left: 0.04em;
+            }
+
+        .myCkbox label input[type="checkbox"],
+        .radio label input[type="radio"] {
+            display: none;
+        }
+
+            .myCkbox label input[type="checkbox"] + .cr > .cr-icon,
+            .radio label input[type="radio"] + .cr > .cr-icon {
+                transform: scale(3) rotateZ(-20deg);
+                opacity: 0;
+                transition: all .3s ease-in;
+            }
+
+            .myCkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+            .radio label input[type="radio"]:checked + .cr > .cr-icon {
+                transform: scale(1) rotateZ(0deg);
+                opacity: 1;
+            }
+
+            .myCkbox label input[type="checkbox"]:disabled + .cr,
+            .radio label input[type="radio"]:disabled + .cr {
+                opacity: .5;
+            }
+
+        .transitions-off * {
+            -webkit-transition: none !important;
+            transition: none !important;
+        }
+
+        .Menu1_2 {
+            margin: -20px auto 0;
+        }
+
+        table.Menu1_2 tr {
+            display: inline-block !important;
+        }
+
+            table.Menu1_2 tr td table tr td a {
+                color: green;
+                float: left;
+                font-family: Cambria;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 30px !important;
+                padding: 0 10px;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase !important;
+            }
+
+
+        .msgsuccess {
+            color: white;
+            background: green;
+            border: none;
+        }
+
+
+
+        .msgerror {
+            color: white;
+            background: red;
+            border: none;
+        }
+
+        .Message {
+            float: left;
+            height: 24px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            color: #fff;
+            background-color: #449d44;
+            border-color: #398439;
+            background-image: none;
+            border-radius: 4px;
+        }
+
+.calculator
+{
+        width:300px;
+        height:300px;
+        background-color:#eeeeee;
+        border:2px solid #CCCCCC;
+        margin:auto;
+        padding-left:5px;
+        padding-bottom:5px;
+}
+.calculator td
+{
+        height:16.66%;
+}
+.calc_td_result
+{
+        text-align:center;
+}
+.calc_result
+{
+        width:90%;
+        height:40px;
+        text-align:right;
+        font-size:24px;
+        font-weight:bold;
+}
+
+.calc_td_calculs
+{
+        text-align:center;
+}
+.calc_calculs
+{
+        width:90%;
+        text-align:left;
+}
+.calc_td_btn
+{
+        width:25%;
+        height:100%;
+}
+.calc_btn
+{
+        width:90%;
+        height:90%;
+        font-size:20px;
+}
+    </style>
+    <script>
+        calc_array = new Array();
+        var calcul = 0;
+        var pas_ch = 0;
+        function $id(id) {
+            return document.getElementById(id);
+        }
+        function f_calc(id, n) {
+            if (n == 'ce') {
+                init_calc(id);
+            }
+            else if (n == '=') {
+                if (calc_array[id][0] != '=' && calc_array[id][1] != 1) {
+                    eval('calcul=' + calc_array[id][2] + calc_array[id][0] + calc_array[id][3] + ';');
+                    calc_array[id][0] = '=';
+                    $id(id + '_result').value = calcul;
+                    calc_array[id][2] = calcul;
+                    calc_array[id][3] = 0;
+                }
+            }
+            else if (n == '+-') {
+                $id(id + '_result').value = $id(id + '_result').value * (-1);
+                if (calc_array[id][0] == '=') {
+                    calc_array[id][2] = $id(id + '_result').value;
+                    calc_array[id][3] = 0;
+                }
+                else {
+                    calc_array[id][3] = $id(id + '_result').value;
+                }
+                pas_ch = 1;
+            }
+            else if (n == 'nbs') {
+                if ($id(id + '_result').value < 10 && $id(id + '_result').value > -10) {
+                    $id(id + '_result').value = 0;
+                }
+                else {
+                    $id(id + '_result').value = $id(id + '_result').value.slice(0, $id(id + '_result').value.length - 1);
+                }
+                if (calc_array[id][0] == '=') {
+                    calc_array[id][2] = $id(id + '_result').value;
+                    calc_array[id][3] = 0;
+                }
+                else {
+                    calc_array[id][3] = $id(id + '_result').value;
+                }
+            }
+            else {
+                if (calc_array[id][0] != '=' && calc_array[id][1] != 1) {
+                    eval('calcul=' + calc_array[id][2] + calc_array[id][0] + calc_array[id][3] + ';');
+                    $id(id + '_result').value = calcul;
+                    calc_array[id][2] = calcul;
+                    calc_array[id][3] = 0;
+                }
+                calc_array[id][0] = n;
+            }
+            if (pas_ch == 0) {
+                calc_array[id][1] = 1;
+            }
+            else {
+                pas_ch = 0;
+            }
+            document.getElementById(id + '_result').focus();
+            return true;
+        }
+        function add_calc(id, n) {
+            if (calc_array[id][1] == 1) {
+                $id(id + '_result').value = n;
+            }
+            else {
+                $id(id + '_result').value += n;
+            }
+            if (calc_array[id][0] == '=') {
+                calc_array[id][2] = $id(id + '_result').value;
+                calc_array[id][3] = 0;
+            }
+            else {
+                calc_array[id][3] = $id(id + '_result').value;
+            }
+            calc_array[id][1] = 0;
+            document.getElementById(id + '_result').focus();
+            return true;
+        }
+        function init_calc(id) {
+            $id(id + '_result').value = 0;
+            calc_array[id] = new Array('=', 1, '0', '0', 0);
+            document.getElementById(id + '_result').focus();
+            return true;
+        }
+        function key_detect_calc(id, evt) {
+            if ((evt.keyCode > 95) && (evt.keyCode < 106)) {
+                var nbr = evt.keyCode - 96;
+                add_calc(id, nbr);
+            }
+            else if ((evt.keyCode > 47) && (evt.keyCode < 58)) {
+                var nbr = evt.keyCode - 48;
+                add_calc(id, nbr);
+            }
+            else if (evt.keyCode == 107) {
+                f_calc(id, '+');
+            }
+            else if (evt.keyCode == 109) {
+                f_calc(id, '-');
+            }
+            else if (evt.keyCode == 106) {
+                f_calc(id, '*');
+            }
+            else if (evt.keyCode == 111) {
+                f_calc(id, '');
+            }
+            else if (evt.keyCode == 110) {
+                add_calc(id, '.');
+            }
+            else if (evt.keyCode == 190) {
+                add_calc(id, '.');
+            }
+            else if (evt.keyCode == 188) {
+                add_calc(id, '.');
+            }
+            else if (evt.keyCode == 13) {
+                f_calc(id, '=');
+            }
+            else if (evt.keyCode == 46) {
+                f_calc(id, 'ce');
+            }
+            else if (evt.keyCode == 8) {
+                f_calc(id, 'nbs');
+            }
+            else if (evt.keyCode == 27) {
+                f_calc(id, 'ce');
+            }
+            return true;
+        }
+    </script>
+    <script type="text/javascript">
+      
+        function submitform()
+        { document.getElementById("form1").submit(); }
+
+        function load_modal() {
+            $('#supportPart').modal('show');
+        }
+
+
+        function FunConfirm() {
+            if (confirm('Are you sure you want to delete this  Item?')) {
+                return;
+            } else {
+                return false;
+            }
+        }
+
+
+        function HideLabel(id) {
+
+
+            if (id == "0") {
+
+                $('#lblmsg').addClass("msgerror");
+            }
+            else {
+                $('#lblmsg').addClass("msgsuccess");
+            }
+            setTimeout("lblHide()", 3000);
+        }
+
+
+
+        function lblHide() {    ///// using festival option
+            //  window.location = "http://webdesign.about.com";
+
+            $('#lblmsg').hide();
+
+        }
+
+
+        //toaster
+        function showContent(msg) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["success"](msg);
+        }
+        function showContentFail(msg) {
+
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["error"](msg);
+
+        }
+
+    </script>
+    
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+    
+
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" SupportsPartialRendering="true" runat="server" AsyncPostBackTimeout="0">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-2.1.4.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui.js" />
+
+                <asp:ScriptReference Path="~/Scripts/bootstrap.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jqplot.dateAxisRenderer.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jqplot.highlighter.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.jqplot.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jqplot.cursor.min.js" />
+
+                <asp:ScriptReference Path="~/Scripts/ScrollableGridPlugin.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.keynavigation.js" />
+                <asp:ScriptReference Path="~/JS02/RealERPScript.js" />
+
+                <asp:ScriptReference Path="~/Scripts/KeyPress.js" />
+
+                <asp:ScriptReference Path="~/Scripts/gridviewScrollHaVer.min.js" />
+                <asp:ScriptReference Path="~/Scripts/ScrollableTablePlugin.js" />
+
+                <asp:ScriptReference Path="~/tinymce/tinymce.min.js" />
+
+                <asp:ScriptReference Path="~/Scripts/chosen.jquery.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-multiselect.js" /> 
+                <asp:ScriptReference Path="~/Scripts/jquery.tablesorter.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.tablesorter.widgets.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/toastr/toastr.min.js" />
+                  <asp:ScriptReference Path="~/Content/Theme/vendor/toastr/toastr-demo.js" />
+
+
+            </Scripts>
+
+        </asp:ScriptManager>
+
+        <asp:Label ID="lblprintstk1" runat="server" Style="display: none; color: #3495F3; position: absolute; right: -500px; top: -5000px"></asp:Label>
+
+        <asp:Panel ID="pnlHead" runat="server">
+           
+           <%-- <div class="sidepnaelMenu1">
+
+                <div class="btn-group" id="sidepnaelMenu1">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Open Menu">
+                        <i class="fa fa-calculator glypSideMenu"></i>
+
+                    </a>
+  <ul class="dropdown-menu dropSideMenu1">
+           <li>
+                  <table class="calculator" id="calc">
+            <tr>
+                <td colspan="4" class="calc_td_result">
+                    <input type="text" readonly="readonly" name="calc_result" id="calc_result" class="calc_result" onkeydown="javascript:key_detect_calc('calc',event);" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="CE" onclick="javascript:f_calc('calc','ce');" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="&larr;" onclick="javascript:f_calc('calc','nbs');" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="%" onclick="javascript:f_calc('calc','%');" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="+" onclick="javascript:f_calc('calc','+');" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="7" onclick="javascript:add_calc('calc',7);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="8" onclick="javascript:add_calc('calc',8);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="9" onclick="javascript:add_calc('calc',9);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="-" onclick="javascript:f_calc('calc','-');" />
+                </td>
+            </tr>
+                        <tr>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="4" onclick="javascript:add_calc('calc',4);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="5" onclick="javascript:add_calc('calc',5);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="6" onclick="javascript:add_calc('calc',6);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="x" onclick="javascript:f_calc('calc','*');" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="1" onclick="javascript:add_calc('calc',1);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="2" onclick="javascript:add_calc('calc',2);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="3" onclick="javascript:add_calc('calc',3);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="&divide;" onclick="javascript:f_calc('calc','');" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="0" onclick="javascript:add_calc('calc',0);" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="&plusmn;" onclick="javascript:f_calc('calc','+-');" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="," onclick="javascript:add_calc('calc','.');" />
+                </td>
+                <td class="calc_td_btn">
+                        <input type="button" class="calc_btn" value="=" onclick="javascript:f_calc('calc','=');" />
+                </td>
+            </tr>
+        </table>
+               </li>
+      </ul>
+                </div>
+
+
+              
+            </div>--%>
+           <%-- <div class="sidepnaelMenu">
+
+                <div class="btn-group" id="sidepnaelMenu">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Open Menu">
+                        <i class="fa fa-bars glypSideMenu"></i>
+
+                    </a>
+                    <ul class="dropdown-menu dropSideMenu">
+
+                        <li><a href="Image/General ERP Document (30042015).pdf" target="_blank"><i class="fa fa-user-secret dropFa"></i>
+                            <br />
+                            Profile</a></li>
+                        <li><a href="Image/2.3 FlowChartHR (Revised).pdf" target="_blank"><i class="fa fa-users dropFa"></i>
+                            <br />
+                            HR Flow</a></li>
+                        <li><a href="#"><i class="fa fa-search dropFa"></i>
+                            <br />
+                            Quic Search</a></li>
+                        <li><a href="Image/FlowManufacturing.pdf" target="_blank"><i class="fa fa-sitemap dropFa"></i>
+                            <br />
+                            Operational
+                        <br />
+                            Flow</a></li>
+                        <li><a href="#"><i class="fa fa-file dropFa"></i>
+                            <br />
+                            Reports</a></li>
+                        <li><asp:HyperLink ID="hybtn" runat="server" NavigateUrl="~/F_33_Doc/GroupChat.aspx"><i class="fa fa-info dropFa"></i>
+                            <br />
+                            Notification</asp:HyperLink></li>
+                        <li><a href="#"><i class="fa fa-user dropFa"></i>
+                            <br />
+                            Online User</a></li>
+                        <li><a href="#supportPart" onclick="load_modal()"><i class="fa fa-phone dropFa"></i>
+                            <br />
+                            Support</a></li>
+                        <li><a href="#"><i class="fa fa-question dropFa"></i>
+                            <br />
+                            Help</a></li>
+                    </ul>
+                    <!-- Small modal -->
+
+
+                </div>
+
+
+                <div id="supportPart" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content well">
+                            <div class="panel-heading">
+                                <h2>Online Support</h2>
+                            </div>
+                            <h3>Software Help:- Md Mahbubur Rahman (Raihan): 01917792844</h3>
+                            <h3>Technical Help:- Mostak 0177545613</h3>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        --%>
+
+            <header class="headerMain2">
+                <div class=" asit_container">
+                    <div class="asit_row">
+                        <div class="asit_ComLogo">
+                            <h1>
+                                <asp:Image ID="Image1" CssClass="Companylogo" runat="server" ImageUrl="~/Image/LOGO1.PNG" />
+                            </h1>
+                        </div>
+                        <div class="asit_ComInfo">
+                            <div class="AppscompName pading5px">
+                                <asp:Label ID="LblGrpCompany" CssClass="lblCompName" runat="server" Text="Label"></asp:Label>
+                                <asp:Label ID="lbladd" CssClass="LblGrpCompanyAdress" runat="server" Text="Label"> </asp:Label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2">
+                        </div>
+                        <div class="asit_userinfoPanel"> 
+                            <asp:UpdatePanel ID="Updatepnlnotid1" runat="server" style="flot:left">
+                                    <ContentTemplate>
+                                        <ul class="nav navbar-nav">
+                                            <!-- Messages: style can be found in dropdown.less-->
+                                            <li class="dropdown messages-menu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                                                    <i class="fa fa-bell"></i>
+                                                    <span class="label label-success" id="lblallpop" runat="server">0</span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+
+                                                    <%--<asp:Repeater ID="repNotificmsg" runat="server" OnItemDataBound="repNotificmsg_OnItemDataBound">
+
+                                                        <ItemTemplate>
+                                                            <li runat="server">
+
+
+                                                                <!-- start message -->
+
+                                                                <div class="pull-left">
+
+                                                                    <asp:Image ID="nimgDB" Width="20px" runat="server" ImageUrl='<%# DataBinder.Eval(Container.DataItem,"sendphoto") %>' />
+                                                                </div>
+                                                                <!-- Message title and timestamp -->
+                                                                <p class="notiTxt">
+                                                                    <asp:HyperLink ID="nMyLink" runat="server" Text='<% #Eval("meassage")%>' Target="_blank" />
+                                                                    <asp:Label ID="nrefid" runat="server" Visible="false" Text='<% #Eval("refid")%>'></asp:Label>
+                                                                    <asp:Label ID="nnotifyid" runat="server" Visible="false" Text='<% #Eval("notifyid")%>'></asp:Label>
+                                                                    <asp:Label ID="nnotifytype" runat="server" Visible="false" Text='<% #Eval("notiytype")%>'></asp:Label>
+                                                                    <asp:Label ID="ntype" runat="server" Visible="false" Text='<% #Eval("ntype")%>'></asp:Label>
+                                                                </p>
+
+
+
+                                                            </li>
+                                                            <!-- end message -->
+                                                            </li>
+
+
+
+
+
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>--%>
+
+
+                                                    <li class="footer">
+                                                        
+                                                                    <%--<asp:HyperLink ID="MyLinkNotificationAll" runat="server" Text="See All Notification" Target="_blank" />--%>
+                                                        
+                                                     
+                                                </ul>
+
+
+                                                
+
+
+                                            </li>
+                                            
+                                            
+                                             <!-- Messages: style can be found in dropdown.less-->
+                                            <li class="dropdown messages-menu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="fa fa-envelope-o"></i>
+                                                    <span class="label label-success" id="lblpop" runat="server">0</span>
+                                                </a>
+
+
+                                                <ul class="dropdown-menu">
+
+                                                    <%--<asp:Repeater ID="repNotific" runat="server" OnItemDataBound="repNotific_ItemDataBound">
+
+                                                        <ItemTemplate>
+                                                            <li runat="server">
+
+
+                                                                <!-- start message -->
+
+                                                                <div class="pull-left">
+
+                                                                    <asp:Image ID="imgDB" Width="20px" runat="server" ImageUrl='<%# DataBinder.Eval(Container.DataItem,"sendphoto") %>' />
+                                                                </div>
+                                                                <!-- Message title and timestamp -->
+                                                                <p class="notiTxt">
+                                                                    <asp:HyperLink ID="MyLink" runat="server" Text='<% #Eval("meassage")%>' Target="_blank" />
+                                                                    <asp:Label ID="refid" runat="server" Visible="false" Text='<% #Eval("refid")%>'></asp:Label>
+                                                                    <asp:Label ID="notifyid" runat="server" Visible="false" Text='<% #Eval("notifyid")%>'></asp:Label>
+                                                                    <asp:Label ID="notifytype" runat="server" Visible="false" Text='<% #Eval("notiytype")%>'></asp:Label>             <asp:Label ID="nntype" runat="server" Visible="false" Text='<% #Eval("ntype")%>'></asp:Label>
+                                                                </p>
+
+
+
+                                                            </li>
+                                                            <!-- end message -->
+                                                            </li>
+
+
+
+
+
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>--%>
+
+
+                                                    <li class="footer">
+                                                         <a class="" id="grpchat" href='<%=this.ResolveUrl("~/F_33_Doc/GroupChat.aspx")%>'>
+                                                          New Chat </a>
+                                                                    <asp:HyperLink ID="MyLinkMsgAll" runat="server" Text="See All Messages" Target="_blank" />
+                                                        
+                                                     
+                                                </ul>
+
+
+                                                <%--<asp:Timer ID="timNotif" runat="server"  OnTick="timNotif_Tick"></asp:Timer>--%>
+
+
+                                            </li>
+                                            
+
+
+                                        </ul>
+                                       
+
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <%-- <asp:PostBackTrigger ControlID="btnAdd"></asp:PostBackTrigger>--%>
+                                    </Triggers>
+                                </asp:UpdatePanel>
+                            <div class="userMenu pull-right">
+                                
+                                <ul> 
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" data-target="#" href="#">
+                                            <asp:Image ID="UserImg" ImageUrl="~/Image/LOGO1a.jpg" runat="server" AlternateText="Image Not Found" Style="width: 60px; height: 50px;" /></a>
+
+                                        <ul class="well dropdown-menu userInformation" aria-labelledby="dropdownMenu">
+                                            <li>
+                                                <div>
+                                                    <asp:Image ID="UserImg2" CssClass="img-circle" ImageUrl="~/Image/LOGO1.JPG" runat="server" AlternateText="Image Not Found" Style="width: 100px; height: 80px; float: left; margin-right: 15px; display: none;" />
+                                                    <p>
+                                                        <asp:Label ID="lblmoduleid" Style="display: none;" runat="server"></asp:Label>
+                                                    </p>
+
+                                                    <p>
+                                                        <asp:Label ID="lblLoginInfo" runat="server">User ID : ADMIN</asp:Label>
+                                                    </p>
+                                                    <p>
+                                                        <a class="" id="Label3" href='<%=this.ResolveUrl("~/Login.aspx")%>'>
+                                                            <span class="glyphicon glyphicon-off"></span>Log out</a>
+
+                                                    </p>
+                                                      
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="container">
+
+                    <div class="row">
+                        <asp:Panel ID="pnlTitle" runat="server">
+                            <div class="pagetitelWrp">
+                                <div class="col-md-4 pading5px">
+                                    <div class="pagetitel">
+                                        <asp:Label ID="lblTitle" Style="margin-left: 20px;" CssClass="lblPageTitel" runat="server"> 
+                                        </asp:Label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pading5px">
+                                    <div class="panelTopMenu">
+                                        <div class="mainmneuWrp" id="main" role="main">
+                                            <asp:Menu ID="Menu1" runat="server" aria-selected="true" ClientIDMode="Static">
+                                            </asp:Menu>
+                                        </div>
+                                        <div class=" clearfix"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class=" asit_col_25pr pading5px pull-right">
+                                    <asp:Panel ID="pnlPrint" runat="server">
+                                    <asp:Label ID="lblprintstk" runat="server"></asp:Label>
+                                    <div class="input-group">
+                                        <asp:DropDownList ID="DDPrintOpt" runat="server" CssClass="form-control inputTxt">
+                                            <asp:ListItem Selected="True" Value="PDF">Adobe Acrobat (PDF)</asp:ListItem>
+                                             <asp:ListItem Value="DOWNLOAD">Download</asp:ListItem>
+                                            <asp:ListItem Value="HTML">HTML</asp:ListItem>
+                                            <asp:ListItem Value="WORD">MS Word</asp:ListItem>
+                                            <asp:ListItem Value="EXCEL">MS Excel</asp:ListItem>
+                                        </asp:DropDownList>
+
+                                        <span class="input-group-btn">
+                                            <asp:LinkButton ID="lnkPrint" runat="server" OnClick="lnkPrint_Click" CssClass="btn btn-success printBtn okBtn"><span class="glyphicon glyphicon-print asitGlyp" style="color:#fff" aria-hidden="true"></span></asp:LinkButton>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                        </asp:Panel>
+                                </div>
+
+                                <div class="col-md-2 pull-right pading5px">
+                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>
+                                            <asp:Label ID="lblmsg" ClientIDMode="Static" CssClass="Message pull-right" runat="server"></asp:Label>
+
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </div>
+                        </asp:Panel>
+
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+
+
+            </header>
+
+        </asp:Panel>
+
+        <section class="appsContiner">
+            <div class="mainpage">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </section>
+
+        <footer class="navbar-fixed-bottom">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+
+                    <asp:Panel ID="pnlbtn" runat="server" Visible="false">
+                        <div class="container">
+                            <div class="row">
+                                <fieldset class="scheduler-border fieldset_A fixdbtn">
+
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+
+                                            <div class="col-md-12 formBtn ">
+                                                <div class="pull-left">
+                                                    <asp:LinkButton ID="lnkbtnLedger" OnClientClick="return confirm('Do You want to Save?');" Visible="false" runat="server" OnClick="lnkbtnLedger_Click" CssClass="btngl btncommon" Style="margin: 0 5px;"><span class="flaticon-book40"></span>Ledger</asp:LinkButton>
+                                                    <asp:LinkButton ID="lnkbtnHisprice" Visible="false" runat="server" CssClass="btngl  btncommon" Style="margin: 0 5px;" OnClick="lnkbtnHisprice_Click"><span class="flaticon-book40"></span>Historical Price</asp:LinkButton>
+                                                    <asp:LinkButton ID="lnkbtnTranList" Visible="false" runat="server" CssClass="btngl  btncommon" Style="margin: 0 5px;" OnClick="lnkbtnTranList_Click"><span class="flaticon-book40"></span>Transaction List</asp:LinkButton>
+                                                    <asp:CheckBox ID="chkBoxN" runat="server" Visible="false" TabIndex="10" Text="UnUsed CheckBox 1" CssClass="btngl checkBoxAN checkBox btncommon" AutoPostBack="true" OnCheckedChanged="chkBoxN_CheckedChanged" />
+                                                    <asp:CheckBox ID="CheckBox1" runat="server" Visible="false" TabIndex="10" Text="UnUsed CheckBox 2" CssClass="btngl checkBoxAN checkBox btncommon" AutoPostBack="true" OnCheckedChanged="CheckBox1_CheckedChanged" />
+
+                                                </div>
+                                                <div class="pull-right">
+                                                    <asp:LinkButton ID="lnkbtnRecalculate" Visible="false" runat="server" CssClass="btnrecal btncommon" Style="margin: 0 5px;" OnClick="lnkbtnRecalculate_Click"><i class="fa fa-refresh" aria-hidden="true"></i> Recalculate</asp:LinkButton>
+
+                                                    <asp:LinkButton ID="lnkbtnNew" runat="server" Visible="false" CssClass="btnsave btncommon " Style="margin: 0 5px;" OnClick="lnkbtnNew_Click"><i class="fa fa-file-o" aria-hidden="true"></i>
+ New</asp:LinkButton>
+                                                    <asp:LinkButton ID="lnkbtnAdd" runat="server" Visible="false" CssClass="btnadd btncommon" OnClick="lnkbtnAdd_Click1" Style="margin: 0 5px;"><i class="fa fa-plus" aria-hidden="true"></i>
+ Add</asp:LinkButton>
+                                                    <asp:LinkButton ID="lnkbtnSave" Visible="false" OnClientClick="return confirm('Do You want to Save?');" runat="server" CssClass="btnnew btncommon" Style="margin: 0 5px;" OnClick="lnkbtnSave_Click"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</asp:LinkButton>
+                                                    <asp:LinkButton ID="lnkbtnEdit" Visible="false" runat="server" CssClass="btnEdit btncommon" OnClick="lnkbtnEdit_Click" Style="margin: 0 5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</asp:LinkButton>
+
+                                                    <asp:LinkButton ID="lnkbtnDelete" Visible="false" runat="server" OnClick="lnkbtnDelete_Click" CssClass="btnDelete btncommon " Style="margin: 0 5px;"><i class="fa fa-minus-square-o" aria-hidden="true"></i> Delete</asp:LinkButton>
+                                                    <asp:LinkButton ID="btnClose" Visible="false" runat="server" CssClass="btnclose btncommon " OnClick="btnClose_Click" Style="margin: 0 5px;"><i class="fa fa-times" aria-hidden="true"></i>
+Close</asp:LinkButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-right copyR">
+
+                        <p><a href="http://www.pintechltd.com/#contact-us" target="_blank">Contact us</a><a href="http://www.pintechltd.com/#about-us">About us</a> <a href="#">Terms of use</a>  <a href="http://www.pintechltd.com/" target="_blank"><span>&copy;</span>Pinovation Tech Ltd.</a>  </p>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+     
+     <script type="text/javascript">
+                //document.getElementById('calc').onload=init_calc('calc');
+     </script>
+</body>
+</html>

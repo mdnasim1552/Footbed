@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C996D60-6891-4542-84DF-62F527AAEFDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPEENTITY</RootNamespace>
+    <AssemblyName>SPEENTITY</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C_01_Mer\OrderStatus.cs" />
+    <Compile Include="C_03_CostABgd\EClassLC.cs" />
+    <Compile Include="C_03_CostABgd\LcOrdercosting.cs" />
+    <Compile Include="C_03_CostABgd\PerOrderStatus.cs" />
+    <Compile Include="C_04_Sampling\EClassPrototypeSampling.cs" />
+    <Compile Include="C_05_ProShip\EClassPlanning.cs" />
+    <Compile Include="C_07_Fin\EClassFinance.cs" />
+    <Compile Include="C_09_Commer\BL_AllLCInfo.cs" />
+    <Compile Include="C_09_Commer\BO_AllLCInfo.cs" />
+    <Compile Include="C_09_Commer\BO_Commer.cs" />
+    <Compile Include="C_09_Commer\EClassLCM.cs" />
+    <Compile Include="C_09_Commer\UserManagerLCM.cs" />
+    <Compile Include="C_10_Procur\EClassProcur.cs" />
+    <Compile Include="C_10_Procur\EClassPur.cs" />
+    <Compile Include="C_10_Procur\UserManPur.cs" />
+    <Compile Include="C_11_RawInv\BO_RawInv.cs" />
+    <Compile Include="C_11_RawInv\EClassPurchase.cs" />
+    <Compile Include="C_15_DPayReg\DPayReg_BO.cs" />
+    <Compile Include="C_15_Pro\BL_Emp_Setup.cs" />
+    <Compile Include="C_15_Pro\BL_Production.cs" />
+    <Compile Include="C_15_Pro\BO_Emp_Setup.cs" />
+    <Compile Include="C_15_Pro\BO_Production.cs" />
+    <Compile Include="C_15_Pro\GetDateWiseMatIssueInfoClass.cs" />
+    <Compile Include="C_15_Pro\MatReturnwip.cs" />
+    <Compile Include="C_15_Pro\RptDayWiseMatCons.cs" />
+    <Compile Include="C_17_GFInv\BO_GFInv.cs" />
+    <Compile Include="C_19_Exp\BL_Collection.cs" />
+    <Compile Include="C_19_Exp\BO_Collection.cs" />
+    <Compile Include="C_19_Exp\EClassExpBO.cs" />
+    <Compile Include="C_19_Exp\EClassReceiptaPayment.cs" />
+    <Compile Include="C_19_Exp\SalesInvoice_BL.cs" />
+    <Compile Include="C_19_Exp\Sales_BO.cs" />
+    <Compile Include="C_19_Exp\UserManReceiptaPayment.cs" />
+    <Compile Include="C_21_Acc\EClassAccounts.cs" />
+    <Compile Include="C_21_Acc\EClassAccVoucher.cs" />
+    <Compile Include="C_21_Acc\EClassDB_BO.cs" />
+    <Compile Include="C_21_Acc\EClassPayment.cs" />
+    <Compile Include="C_21_Acc\EClassSpecification.cs" />
+    <Compile Include="C_21_Acc\UserDB_BL.cs" />
+    <Compile Include="C_22_Sal\EClassDelivery.cs" />
+    <Compile Include="C_22_Sal\EClassReturn.cs" />
+    <Compile Include="C_22_Sal\EClassSales_02.cs" />
+    <Compile Include="C_22_Sal\SalesInvoice_BL.cs" />
+    <Compile Include="C_22_Sal\Sales_BO.cs" />
+    <Compile Include="C_22_Sal\TargetDetails.cs" />
+    <Compile Include="C_22_Sal\UserManSales.cs" />
+    <Compile Include="C_23_MAcc\EClassDB_BO.cs" />
+    <Compile Include="C_23_MAcc\UserDB_BL.cs" />
+    <Compile Include="C_27_Fxt\FxtGenInfo.cs" />
+    <Compile Include="C_31_Mis\BL_Production.cs" />
+    <Compile Include="C_31_Mis\BO_Production.cs" />
+    <Compile Include="C_31_Mis\EClassOrder.cs" />
+    <Compile Include="C_31_Mis\UserManageMis.cs" />
+    <Compile Include="C_34_Mgt\EClassSalPurAcc.cs" />
+    <Compile Include="C_34_Mgt\EntityClassConversion.cs" />
+    <Compile Include="C_34_Mgt\EntityClassCurrency.cs" />
+    <Compile Include="C_34_Mgt\SalPurAccCombo.cs" />
+    <Compile Include="C_34_Mgt\SalPurAccComboManager.cs" />
+    <Compile Include="C_39_MyPage\EClassMIS.cs" />
+    <Compile Include="C_39_MyPage\EClassMyPage.cs" />
+    <Compile Include="C_39_MyPage\UserManagerMyPage.cs" />
+    <Compile Include="C_47_Kpi\BL_EntryKpi.cs" />
+    <Compile Include="C_47_Kpi\BO_EntryKpi.cs" />
+    <Compile Include="C_47_Kpi\EClassEMPKPI.cs" />
+    <Compile Include="C_47_Kpi\EClassKPI.cs" />
+    <Compile Include="C_47_Kpi\UserManagerKPI.cs" />
+    <Compile Include="C_62_Mis\EClassSales_02.cs" />
+    <Compile Include="C_81_Hrm\C_81_Rec\BL_ClassManPower.cs" />
+    <Compile Include="C_81_Hrm\C_81_Rec\BO_ClassManPower.cs" />
+    <Compile Include="C_81_Hrm\C_82_App\EmployeeInfo.cs" />
+    <Compile Include="C_81_Hrm\C_83_Att\BO_ClassAttn.cs" />
+    <Compile Include="C_81_Hrm\C_84_Lea\BO_ClassLeave.cs" />
+    <Compile Include="C_81_Hrm\C_84_Lea\RpHRtPayroll.cs" />
+    <Compile Include="C_81_Hrm\C_86_All\EmployeeInformation.cs" />
+    <Compile Include="C_81_Hrm\C_89_Pay\EmpArrearSalaryList.cs" />
+    <Compile Include="C_81_Hrm\C_89_Pay\RpHRtPayroll.cs" />
+    <Compile Include="C_81_Hrm\C_90_PF\BO_ClassPF.cs" />
+    <Compile Include="C_81_Hrm\C_92_Mgt\BO_EmpDashboard.cs" />
+    <Compile Include="C_81_Hrm\C_92_Mgt\BO_EmpSep.cs" />
+    <Compile Include="C_81_Hrm\C_92_Mgt\EClassHrInterface.cs" />
+    <Compile Include="C_81_Hrm\C_92_Mgt\EClass_HRM.cs" />
+    <Compile Include="C_81_Hrm\C_92_Mgt\HRM_MGT_BL.cs" />
+    <Compile Include="EClassModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManager.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagerMIS.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagerSampling.cs" />
+    <Compile Include="UserManGenAccount.cs" />
+    <Compile Include="UserManOrder.cs" />
+    <Compile Include="Xml_BO_Class.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\SPEENTITY.C_01_Mer.EclassCommonCostSam.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_01_Mer.EclassConsumptionFB.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_03_CostABgd.EClassLC+EClassMatReqAgainsOrder.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_04_Sampling.EClassPrototypeSampling+RptSamProdReq2.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_05_ProShip.EClassPlanning+ArticleLayoutClass.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_09_Commer.BO_Matwisepo.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_10_Procur.EClassProcur+SurveyInfo.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_11_RawInv.EClassPurchase+EClassPurchaseOrdr.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_11_RawInv.EClassPurchase+MatUnused.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_11_RawInv.MtrReqDetails.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_15_Pro.BO_Production+EclassProdProcess+RptProditmPrint.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_15_Pro.DayWiseMatCons+DPRWiseMattCons.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_19_Exp.EClassExpBO+RptEclassExportSummery.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_21_Acc.EClassAccounts+ResCodeBook.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_82_App.EmployeeInfo+EmployeeIncrInfo.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_82_App.EmployeeInfo+EmployeeInfoBangla.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+DailyAttnSummary.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+DailyAttnSummaryCatWise.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+DailyLateAndAbsentFb.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+EmpAbsentInf.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+EmpAttendenceFB.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+EmpJobCard01.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_83_Att.BO_ClassAttn+RptDayWiseOTSheet.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_84_Lea.BO_ClassLeave+EmpLeanChasment.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_84_Lea.BO_ClassLeave+EmpLeaveStatusFb.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_84_Lea.BO_ClassLeave+RptMatLeavePaySheet.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_86_All.EmployeeInformation+EmpMobBillInfo.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_86_All.EmployeeInformation+RptEarnLeaveEnCashment.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_86_All.EmployeeInformation+RptOtherDedction.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_89_Pay.RptMonthlyOTSumSectionWise.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_92_Mgt.BO_EmpSep+EmpSep01.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_92_Mgt.EClassHrInterface+BO_EmpConfirm.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_92_Mgt.EClassHrInterface+EclassEmployeeLst.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.C_92_Mgt.EClassHrInterface+EclassSttlemntInfo.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.C_81_Hrm.F_92_Mgt.BO_EmpDashboard+empInfoBangla.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.RD_81_Hrm.RD_89_Pay.RpHRtPayroll+BonusSummary.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.RD_81_Hrm.RD_89_Pay.RpHRtPayroll+MonthlySalSummary.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.RD_81_Hrm.RD_89_Pay.RpHRtPayroll+OverTimeSal.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.RD_81_Hrm.RD_89_Pay.RpHRtPayroll+RptAnnualIncrement.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.RD_81_Hrm.RD_89_Pay.RpHRtPayroll+RptFestivalBonus.datasource" />
+    <None Include="Properties\DataSources\SPEENTITY.RD_81_Hrm.RD_89_Pay.RpHRtPayroll+SalarySheet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPELIB\SPELIB.csproj">
+      <Project>{bfb4de3c-4c41-447f-96c4-afa9eeabaf9d}</Project>
+      <Name>SPELIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

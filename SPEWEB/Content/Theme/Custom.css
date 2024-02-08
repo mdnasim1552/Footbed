@@ -1,0 +1,178 @@
+﻿.navigation-box {
+    top: .4rem;
+    right: .8rem;
+    width: 2rem;
+    position: absolute;
+}
+.hidden{
+    display:none;
+}
+.app.has-compact-menu .app-aside {
+    width: 4rem !important;
+}
+.text-truncate{
+    margin:0px !important;
+}
+@media (min-width: 768px) {
+    .breaking-caret:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-left: 15px solid #346cb0;
+        border-bottom: 17px solid transparent;
+        position: absolute;
+        right: -15px;
+        top: 0;
+    }
+}
+.W100Pixel {
+    width: 100px !important;
+}
+.margin-top30px {
+    margin-top: 30px;
+}
+.margin-top20px {
+    margin-top: 20px;
+}
+
+.grvHeader {
+    background: #dff0d8 !important;
+    color: #000;
+    font-family: Cambria !important;
+    font-size: 12px !important;
+    height: 30px !important;
+    font-weight: initial;
+    text-align: center;
+}
+
+.grvRows {
+    font-family: Cambria !important;
+    /*font-size: 10px;*/
+    height: 25px !important;
+}
+
+.grvFooter {
+    background: #dff0d8 !important;
+    color: #000;
+    font-family: Cambria !important;
+    font-size: 12px !important;
+    height: 23px !important;
+}
+
+.gvPagination {
+    border: none;
+}
+
+    .gvPagination table {
+        border: none;
+    }
+
+        .gvPagination table tr {
+            border: none;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+            .gvPagination table tr td a {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                color: #337ab7;
+                line-height: 1.42857;
+                padding: 1px 12px;
+                text-decoration: none;
+            }
+
+            .gvPagination table tr td span {
+                background-color: #005F8D;
+                border: 1px solid #ddd;
+                color: #fff;
+                line-height: 1.42857;
+                padding: 1px 12px;
+                text-decoration: none;
+            }
+
+            .gvPagination table tr td a:hover {
+                background: #CA3523;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                color: #fff;
+            }
+
+ul.ui-autocomplete.ui-menu {
+    width: 300px;
+    color: blue;
+    top: 110px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+    /* 
+    targets the first result's <a> element, 
+    remove the a at the end to target the li itself 
+*/
+    ul.ui-autocomplete.ui-menu li:first-child a {
+        color: blue;
+    }
+
+
+
+.colLeft li a {
+    color: #008000;
+    text-decoration: none;
+
+}
+
+    .colLeft li a:hover {
+        color: #000;
+    }
+
+.colMid li a {
+    color: #000;
+    text-decoration: none;
+}
+.colMid li a:hover {
+        color: #346cb0;
+    }
+
+.colRight li a {
+    color: #155273;
+    text-decoration: none;
+}
+.colRight li a:hover {
+        color: #000;
+    }
+.app-footer {
+    margin: 0px;
+    padding: 2px 0px !important;
+    background: #c6cfcf;
+    background: /* top, transparent red */
+    linear-gradient( rgba(198, 207, 207, 0.50), rgba(198, 207, 207, 0.50));
+}
+.grvContentarea{
+    font-size:12px !important;
+}
+
+.metric-row .metric {
+    
+    min-height: 5.5rem !important;
+}
+.pb-4, .py-4 {
+    padding-bottom: 0.5rem!important;
+}
+.pt-4, .py-4 {
+    padding-top: 0.5rem!important;
+}
+.page-inner {
+    padding-top: 0.2rem !important;
+}
+
+.aside-footer.border-top.ptl-side-footer.p-3 {
+    padding: 2rem !important;
+    padding-top: 0px !important;
+}
+.gvHeader {
+    text-align:center;
+}

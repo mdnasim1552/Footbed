@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SPE01.Master.cs" Inherits="SPEWEB.SPE01" %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- End Required meta tags -->
+    <!-- Begin SEO tag -->
+    <title> Sign In | Pintech ERP </title>
+    <meta property="og:title" content="Sign In">
+    <meta name="author" content="Beni Arisandi">
+    <meta property="og:locale" content="en_US">
+    <meta name="description" content="Pinovation Tech ERP">
+    <meta property="og:description" content="Pinovation Tech ERP">
+    <link rel="canonical" href="//pintechltd.com">
+    <meta property="og:url" content="//pintechltd.com">
+    <meta property="og:site_name" content="Pinovation Tech ERP">
+    <script type="application/ld+json">
+      {
+        "name": "Looper - Bootstrap 4 Admin Theme",
+        "description": "Responsive admin theme build on top of Bootstrap 4",
+        "author":
+        {
+          "@type": "Person",
+          "name": "Beni Arisandi"
+        },
+        "@type": "WebSite",
+        "url": "",
+        "headline": "Sign In",
+        "@context": "http://schema.org"
+      }
+
+    </script>
+    <!-- End SEO tag -->
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="theme-color" content="#3063A0">
+    <!-- BEGIN BASE STYLES -->
+    <link rel="stylesheet" href="Content/Theme/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/Theme/vendor/fontawesome-free/css/all.min.css">
+    <!-- END BASE STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    
+    <link rel="stylesheet" href="Content/Theme/main.min.css">
+    <link rel="stylesheet" href="Content/Theme/Custom.css">
+    <link rel="stylesheet" href="Content/Theme/vendor/toastr/toastr.min.css">
+      <script src="Content/Theme/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+       <script src="Content/Theme/vendor/toastr/toastr.min.js" type="text/javascript"></script>
+       <script src="Content/Theme/vendor/toastr/toastr-demo.js" type="text/javascript"></script>
+    <!-- END THEME STYLES -->
+      <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+      <script>
+          function showContentFail(msg) {
+
+              toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "progressBar": true,
+                  "preventDuplicates": false,
+                  "positionClass": "toast-top-right",
+                  "showDuration": "400",
+                  "hideDuration": "1000",
+                  "timeOut": "7000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut"
+              }
+              toastr["error"](msg);
+
+          };
+    </script>
+  </head>
+    
+
+
+<body>
+    <form id="Appsform1" runat="server">
+       
+         <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+               <%--<asp:ScriptReference Path="~/Content/Theme/Vendor/jquery/jquery.min.js" />--%>
+                 <asp:ScriptReference Path="~/Content/Theme/Vendor/bootstrap/js/bootstrap.min.js" />
+               <%--  <asp:ScriptReference Path="~/Content/Theme/vendor/toastr/toastr.min.js" />              
+                <asp:ScriptReference Path="~/Content/Theme/vendor/toastr/toastr-demo.js" />--%>
+                <asp:ScriptReference Path="~/Content/Theme/main.min.js" />
+                 <%--<asp:ScriptReference Path="~/Scripts/jqplot.dateAxisRenderer.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jqplot.highlighter.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.jqplot.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jqplot.cursor.min.js" />
+                <asp:ScriptReference Path="~/Scripts/ScrollableGridPlugin.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.keynavigation.js" />             
+                <asp:ScriptReference Path="~/Scripts/KeyPress.js" />--%>
+                <%--<asp:ScriptReference Path="~/Scripts/KeyPressDefine.js" />--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <main class="auth">
+      <header id="auth-header" class="auth-header" style="background-image: url(Content/Theme/images/footwear.jpg); background-position:center;">
+        <h1>
+            <asp:Image ID="Image1" runat="server" alt="" height="72" />
+          <%--<img src="assets/images/brand-inverse.png" alt="" height="72">--%>
+        
+        </h1>
+        <p> 
+          <asp:Label ID="CompAddress" runat="server">&nbsp;</asp:Label>
+        </p>
+      </header>
+      <!-- form -->
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+      <!-- /.auth-form -->
+      <!-- copyright -->
+      <footer class="auth-footer"> © <%= System.DateTime.Today.ToString("yyyy") %> All Rights Reserved.
+        <a href="http://pintech.com/">Pinovation Tech Ltd</a>, V-
+        <a href="#">21.1.01</a>
+      </footer>
+    </main>
+
+     
+              
+           
+
+       
+    </form>
+
+   <script src="Content/Theme/vendor/particles.js/particles.min.js"></script>
+    <script>
+      
+      /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+      particlesJS.load('auth-header', 'assets/javascript/particles.json');
+    </script>
+    <!-- END PLUGINS JS -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+   
+  </body>
+</html>

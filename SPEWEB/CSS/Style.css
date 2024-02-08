@@ -1,0 +1,165 @@
+﻿body {
+}
+.label
+{
+	border: thin solid #0066CC;
+	font-size: 16px;
+		color: #CC0099;
+		font-weight: bold;
+		font-style: normal;
+		font-variant: small-caps;
+		text-transform: uppercase;
+		background-color: #A2AD99;
+		background-repeat: repeat-x;
+		background-attachment: inherit;
+		background-position: left center;
+		margin-left: 0px;
+		text-align:left;
+}
+.label1
+{
+	border: thin solid #0066CC;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: small-caps;
+	text-transform: uppercase;
+	background-color: #A2AD99;
+	background-repeat: repeat-x;
+	background-attachment: inherit;
+	background-position: left center;
+	margin-left: 0px;
+	text-align: center;
+}
+.label2
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+    text-align: right;
+    margin-right: 11px;
+}
+.label3
+{
+	
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFF66;
+	font-variant: normal;
+    text-align: left;
+}
+.ddl
+{
+	border: 1px solid #7393B1;
+	font-size: 11px;
+	font-style: normal;
+	background-color: #FFFFFF;
+    text-align: left;
+    font-weight: 700;
+    margin-left: 9px;
+}
+.button
+{
+	border: 1px solid #FFFFCC;
+	background-color: #003366;	
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	margin-left: 0px;
+    font-family: Verdana;
+    text-align: center;
+    font-size: 12px;
+    }
+
+.GridLebel
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+	color: #000066;
+    text-align: right;
+}
+.GridLebelL
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+	color: #000066;
+    text-align: left;
+}
+.GridTextbox
+{
+	font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+	text-align:right;
+    color: black;
+}
+.BGtable
+{
+	background-color: #62C2CC;
+	background-repeat: inherit;
+	border: 2px solid #FFFFFF;
+}
+ .normalrow
+{
+	background-color: #ADD586;
+}  
+  
+        .highlightrow
+{
+	background-color: #A6A6D2;
+}  
+.bl 
+{
+	background: 0 70% no-repeat #e68200;
+  width: 20px
+  }
+.border
+{
+	/*border-style: solid none none none;
+	border-width: 2px;
+	border-color: #CC3399;*/
+}
+.btntest
+{
+	
+	
+	}
+	.abc
+{
+	font-family: 'Trebuchet MS';
+	font-size: 12px;
+	font-weight: bold;
+	color: #3399FF;
+}
+.lebelf
+{
+	font-family: Verdana;
+	font-size: 25px;
+	font-weight: bolder;
+	font-style: normal;
+	font-variant: small-caps;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	list-style-type: upper-roman;
+    text-align: left;
+}
+
+.HeaderTitle
+{    font-weight:bold;
+     font-size:18px;
+     font-family:Times New Roman;
+     color:Yellow;
+     border-top:1px solid white;
+     border-bottom: 1px solid White;
+     text-transform:uppercase;
+     font-variant:small-caps;
+	
+	}

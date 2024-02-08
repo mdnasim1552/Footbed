@@ -1,0 +1,1031 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SPE.Master.cs" Inherits="SPEWEB.SPE" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- End Required meta tags -->
+    <!-- Begin SEO tag -->
+    <link rel="icon" type="image/ico" href="~/favicon.ico" />
+    <title>PinTech ERP </title>
+    <meta property="og:title" content="Dashboard">
+    <meta name="author" content="Pinovation Tech Ltd">
+    <meta property="og:locale" content="en_US">
+    <meta name="description" content="Pinovation Tech Ltd is a Private Limited Company and is an independent ERP development company of Bangladesh. We are a member of BASIS and are one of the very few companies Who are pioneers of Enterprise Resource Planing Softwares.
+From our inception we have developed business solutions to integrate & amalgate each department & its activities under a single solution. We are well known for our speedy Implementation of ERP & professionalism.">
+    <meta property="og:description" content="If you have a business we have a solution for you!">
+
+    <meta property="og:site_name" content="FOOTWEAR ERP">
+
+
+    <script type="application/ld+json">
+      {
+        "name": "Looper - Bootstrap 4 Admin Theme",
+        "description": "Responsive admin theme build on top of Bootstrap 4",
+        "author":
+        {
+          "@type": "Person",
+          "name": "Beni Arisandi"
+        },
+        "@type": "WebSite",
+        "url": "",
+        "headline": "Dashboard",
+        "@context": "http://schema.org"
+      }
+
+    </script>
+    <!-- End SEO tag -->
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="theme-color" content="#3063A0">
+    <!-- End FAVICONS -->
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet">
+    <!-- End GOOGLE FONT -->
+    <!-- BEGIN PLUGINS STYLES -->
+    <!-- <link rel="stylesheet" href="https://uselooper.com/assets/vendor/open-iconic/css/open-iconic-bootstrap.min.css">-->
+    <link href="Content/Theme/vendor/fontawesome-free/css/all.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="Content/Theme/vendor/flatpickr/flatpickr.min.css">
+    <!-- END PLUGINS STYLES -->
+
+    <link rel="stylesheet" href="Content/Theme/vendor/toastr/toastr.min.css">
+    <!-- BEGIN THEME STYLES -->
+    <link rel="stylesheet" href="Content/Theme/theme.css">
+    <link rel="stylesheet" href="Content/Theme/Custom.css">
+    <link rel="stylesheet" href="Content/Theme/theme-dark.min.css" data-skin="dark">
+    <link href="Content/jquery-ui.css" rel="Stylesheet">
+    <link href="Content/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="Content/GridViewScrooling.css" rel="stylesheet" />
+    <link href="Content/chosen.css" rel="stylesheet" />
+    <link href="Content/cssrmg.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Content/Theme/main.min.css">
+    <link rel="stylesheet" href="Content/Theme/vendor/nouislider/nouislider.min.css">
+
+
+    <script>
+
+        var skin = localStorage.getItem('skin') || 'default';
+
+        var unusedLink = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
+        unusedLink.setAttribute('rel', '');
+        unusedLink.setAttribute('disabled', true);
+
+        function submitform() { document.getElementById("form1").submit(); }
+
+        // setTimeout(function () { manipulate(); }, 3000);
+        // manipulate();
+
+        function manipulate() {
+            var itemname = localStorage.getItem("itemname");
+            // alert(itemname);
+
+            $("." + itemname).addClass("has-open");
+            if (itemname == "") {
+                return;
+            }
+        }
+        function SetItemStorage(itemname) {
+            var olitemname = localStorage.getItem("itemname");
+            if (olitemname == itemname) {
+                itemname = "";
+            }
+            localStorage.removeItem("itemname");
+            localStorage.setItem("itemname", itemname);
+        }
+
+        //toaster
+        function showContent(msg) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "2000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["success"](msg);
+        };
+        function showContentFail(msg) {
+
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "2000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["error"](msg);
+
+        };
+
+
+    </script>
+    <!-- END THEME STYLES -->
+
+</head>
+<body>
+
+    <form id="form1" runat="server" enctype="multipart/form-data">
+        <asp:TextBox ID="ParentDir" runat="server" CssClass="hidden"></asp:TextBox>
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" EnablePageMethods="true" SupportsPartialRendering="true" runat="server" AsyncPostBackTimeout="0">
+
+            <Scripts>
+                <asp:ScriptReference Path="~/Content/Theme/vendor/jquery/jquery.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/bootstrap/js/popper.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/bootstrap/js/bootstrap.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/pace/pace.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/stacked-menu/stacked-menu.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/perfect-scrollbar/perfect-scrollbar.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/flatpickr/flatpickr.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/easy-pie-chart/jquery.easypiechart.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/chart.js/Chart.min.js" />
+                <%--<asp:ScriptReference Path="~/Content/Theme/Content/Theme/main.min.js" />--%>
+                <asp:ScriptReference Path="~/Content/Theme/main.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/theme.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/toastr/toastr.min.js" />
+                <asp:ScriptReference Path="~/Content/Theme/dashboard-demo.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/toastr/toastr-demo.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/nouislider/wNumb.js" />
+                <asp:ScriptReference Path="~/Content/Theme/vendor/nouislider/nouislider.min.js" />
+                <asp:ScriptReference Path="~/JS02/RealERPScript.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-multiselect.js" />
+                <asp:ScriptReference Path="~/Scripts/ScrollableGridPlugin.js" />
+                <asp:ScriptReference Path="~/Scripts/gridviewScrollHaVer.min.js" />
+                <asp:ScriptReference Path="~/Scripts/ScrollableTablePlugin.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-migrate-1.3.0.js" />
+                <asp:ScriptReference Path="~/Scripts/chosen.jquery.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.keynavigation.js" />
+
+
+
+
+            </Scripts>
+
+        </asp:ScriptManager>
+
+        <asp:Label ID="lblprintstk1" runat="server" Style="display: none; color: #3495F3; position: absolute; right: -500px; top: -5000px"></asp:Label>
+        <!-- .app -->
+        <div class="app">
+            <!--[if lt IE 10]>
+      <div class="page-message" role="alert">You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
+      <![endif]-->
+            <!-- .app-header -->
+            <header class="app-header app-header-dark">
+                <!-- .top-bar -->
+                <div class="top-bar">
+                    <!-- .top-bar-brand -->
+
+                    <div class="top-bar-brand">
+
+                        <a href='Dashboard' id="LogoBar" runat="server">
+
+                            <asp:Image ID="ComLogo" runat="server" Style="min-width: 100px; max-width: 150px; max-height: 55px;" />
+
+                        </a>
+                    </div>
+                    <!-- /.top-bar-brand -->
+                    <!-- .top-bar-list -->
+                    <div class="top-bar-list">
+                        <!-- .top-bar-item -->
+                        <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
+                            <!-- toggle menu -->
+                            <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="toggle menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+                            <!-- /toggle menu -->
+                        </div>
+                        <!-- /.top-bar-item -->
+                        <!-- .top-bar-item -->
+                        <div class="top-bar-item top-bar-item-full">
+                            <!-- .top-bar-search -->
+
+                            <!--------title----------------->
+                            <span class="fa fa-map-marker" aria-hidden="true"></span>&nbsp;
+                             <asp:Label ID="lblTitle" CssClass="text-white" runat="server"> 
+                             </asp:Label>
+
+                            <!-- /.top-bar-search -->
+                        </div>
+                        <!-- /.top-bar-item -->
+                        <!-- .top-bar-item -->
+
+                        <div class="top-bar-item top-bar-item-right px-0 d-none d-sm-flex">
+                            <asp:Label ID="lblprintstk" runat="server"></asp:Label>
+                            <asp:DropDownList ID="DDPrintOpt" Width="80px" runat="server" CssClass="custom-select">
+                                <asp:ListItem Selected="True" Value="PDF">PDF</asp:ListItem>
+                                <asp:ListItem Value="DOWNLOAD">Download</asp:ListItem>
+                                <asp:ListItem Value="HTML">HTML</asp:ListItem>
+                                <asp:ListItem Value="WORD">Word</asp:ListItem>
+                                <asp:ListItem Value="EXCEL">Excel</asp:ListItem>
+                            </asp:DropDownList>
+
+                            <%-- <asp:UpdatePanel ID="UpdatePanelPrint" runat="server">
+                                        <ContentTemplate>--%>
+                            <asp:LinkButton ID="lnkPrint" runat="server" OnClick="lnkPrint_Click" CssClass="btn btn-success"><span class=" fa fa-print"></span></asp:LinkButton>
+
+                            <%-- </ContentTemplate>
+                             </asp:UpdatePanel>--%>
+                            <!-- .nav -->
+                            <ul class="header-nav nav">
+
+                                <!-- .nav-item -->
+                                <li class="nav-item dropdown header-nav-dropdown has-notified">
+                                    <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-chart-area"></span></a>
+                                    <!-- .dropdown-menu -->
+                                    <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right">
+                                        <div class="dropdown-arrow"></div>
+                                        <h6 class="dropdown-header stop-propagation">
+                                            <span>Activities <span class="badge">(2)</span></span>
+                                        </h6>
+                                        <!-- .dropdown-scroll -->
+                                        <div class="dropdown-scroll perfect-scrollbar">
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item unread">
+                                                <div class="user-avatar">
+                                                    <img src="Content/Theme/images/avatars/uifaces15.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Jeffrey Wells created a schedule </p>
+                                                    <span class="date">Just now</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item unread">
+                                                <div class="user-avatar">
+                                                    <img src="Content/Theme/images/avatars/uifaces16.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Anna Vargas logged a chat </p>
+                                                    <span class="date">3 hours ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/uifaces17.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Sara Carr invited to Stilearn Admin </p>
+                                                    <span class="date">5 hours ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/uifaces18.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Arthur Carroll updated a project </p>
+                                                    <span class="date">1 day ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/uifaces19.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Hannah Romero created a task </p>
+                                                    <span class="date">1 day ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/uifaces20.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Angela Peterson assign a task to you </p>
+                                                    <span class="date">2 days ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/uifaces21.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="text">Shirley Mason and 3 others followed you </p>
+                                                    <span class="date">2 days ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                        </div>
+                                        <!-- /.dropdown-scroll -->
+                                        <a href="user-activities.html" class="dropdown-footer">All activities <i class="fas fa-fw fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                    <!-- /.dropdown-menu -->
+                                </li>
+                                <!-- /.nav-item -->
+                                <!-- .nav-item -->
+                                <li class="nav-item dropdown header-nav-dropdown has-notified">
+                                    <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-envelope-open"></span></a>
+                                    <!-- .dropdown-menu -->
+                                    <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right">
+                                        <div class="dropdown-arrow"></div>
+                                        <h6 class="dropdown-header stop-propagation">
+                                            <span>Messages</span> <a href="<%=ResolveClientUrl("~/Tickets/GetNotification?Id=All&RefId=&notiytype=&ntype=")%>">Mark all as read</a>
+                                        </h6>
+                                        <!-- .dropdown-scroll -->
+                                        <div class="dropdown-scroll perfect-scrollbar" id="repNotificmsg">
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item unread">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/team1.jpg" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="subject">Stilearning </p>
+                                                    <p class="text text-truncate">Invitation: Joe's Dinner @ Fri Aug 22 </p>
+                                                    <span class="date">2 hours ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/team3.png" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="subject">Openlane </p>
+                                                    <p class="text text-truncate">Final reminder: Upgrade to Pro </p>
+                                                    <span class="date">23 hours ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="tile tile-circle bg-green">GZ </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="subject">Gogo Zoom </p>
+                                                    <p class="text text-truncate">Live healthy with this wireless sensor. </p>
+                                                    <span class="date">1 day ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="tile tile-circle bg-teal">GD </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="subject">Gold Dex </p>
+                                                    <p class="text text-truncate">Invitation: Design Review @ Mon Jul 7 </p>
+                                                    <span class="date">1 day ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="user-avatar">
+                                                    <img src="assets/images/avatars/team2.png" alt="">
+                                                </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="subject">Creative Division </p>
+                                                    <p class="text text-truncate">Need some feedback on this please </p>
+                                                    <span class="date">2 days ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                            <!-- .dropdown-item -->
+                                            <a href="#" class="dropdown-item">
+                                                <div class="tile tile-circle bg-pink">LD </div>
+                                                <div class="dropdown-item-body">
+                                                    <p class="subject">Lab Drill </p>
+                                                    <p class="text text-truncate">Our UX exercise is ready </p>
+                                                    <span class="date">6 days ago</span>
+                                                </div>
+                                            </a>
+                                            <!-- /.dropdown-item -->
+                                        </div>
+                                        <!-- /.dropdown-scroll -->
+                                        <a href="<%=ResolveClientUrl("~/Tickets/GetNotification?Id=All&RefId=&notiytype=&ntype=")%>" class="dropdown-footer">All messages <i class="fas fa-fw fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                    <!-- /.dropdown-menu -->
+                                </li>
+                                <!-- /.nav-item -->
+                                <!-- .nav-item -->
+                                <li class="nav-item dropdown header-nav-dropdown">
+                                    <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-th "></span></a>
+                                    <!-- .dropdown-menu -->
+                                    <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right">
+                                        <div class="dropdown-arrow"></div>
+                                        <!-- .dropdown-sheets -->
+                                        <div class="dropdown-sheets">
+                                            <!-- .dropdown-sheet-item -->
+                                            <div class="dropdown-sheet-item">
+                                                <a href="#" class="tile-wrapper"><span class="tile tile-lg bg-indigo"><i class="oi oi-people"></i></span><span class="tile-peek">Teams</span></a>
+                                            </div>
+                                            <!-- /.dropdown-sheet-item -->
+                                            <!-- .dropdown-sheet-item -->
+                                            <div class="dropdown-sheet-item">
+                                                <a href="#" class="tile-wrapper"><span class="tile tile-lg bg-teal"><i class="oi oi-fork"></i></span><span class="tile-peek">Projects</span></a>
+                                            </div>
+                                            <!-- /.dropdown-sheet-item -->
+                                            <!-- .dropdown-sheet-item -->
+                                            <div class="dropdown-sheet-item">
+                                                <a target="_blank" href="<%=this.ResolveUrl("~/F_81_Hrm/F_84_Lea/MyLeave?Type=User&genno=&actcode=")%>" class="tile-wrapper"><span class="tile tile-lg bg-pink"><i class="fa fa-tasks"></i></span><span class="tile-peek">Leave</span></a>
+                                            </div>
+                                            <!-- /.dropdown-sheet-item -->
+                                            <!-- .dropdown-sheet-item -->
+                                            <div class="dropdown-sheet-item">
+                                                <a href="#" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="oi oi-fire"></i></span><span class="tile-peek">Feeds</span></a>
+                                            </div>
+                                            <!-- /.dropdown-sheet-item -->
+                                            <!-- .dropdown-sheet-item -->
+                                            <div class="dropdown-sheet-item">
+                                                <a href="#" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-document"></i></span><span class="tile-peek">Files</span></a>
+                                            </div>
+                                            <!-- /.dropdown-sheet-item -->
+                                        </div>
+                                        <!-- .dropdown-sheets -->
+                                    </div>
+                                    <!-- .dropdown-menu -->
+                                </li>
+                                <!-- /.nav-item -->
+                            </ul>
+                            <!-- /.nav -->
+                            <!-- .btn-account -->
+                            <div class="dropdown d-flex">
+                                <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="user-avatar user-avatar-md">
+                                        <img src='<%= "http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>/GetImage.aspx?ImgID=ImgUser' alt="Image"></span>
+                                    <span class="account-summary pr-lg-4 d-none d-lg-block"><span class="account-name" id="UserName3" runat="server">Beni Arisandi</span> <span class="account-description" id="Designation" runat="server">Marketing Manager</span></span></button>
+                                <!-- .dropdown-menu -->
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-arrow ml-3"></div>
+                                    <h6 class="dropdown-header d-none d-md-block d-lg-none" id="UserName1" runat="server"></h6>
+                                    <a class="dropdown-item" href='<%= "http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>/UserProfile.aspx'><span class="dropdown-icon oi oi-person"></span>Profile</a> <a class="dropdown-item" href='<%=this.ResolveUrl("~/Login.aspx")%>'><span class="dropdown-icon oi oi-account-logout"></span>Logout</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<%=this.ResolveUrl("~/F_33_Doc/GroupChat.aspx")%>">Group Task Center</a>
+                                    <a class="dropdown-item" href="<%= this.ResolveUrl("~/Tickets/Index.aspx") %>">Help Center</a> <a class="dropdown-item" href="https://pintechltd.com/#contact-us">Ask Forum</a>
+                                    <a class="dropdown-item" href="<%=this.ResolveUrl("~/MyShortCutLink.aspx?Module=")%>">Keyboard Shortcuts</a>
+                                </div>
+                                <!-- /.dropdown-menu -->
+                            </div>
+                            <!-- /.btn-account -->
+                        </div>
+                        <!-- /.top-bar-item -->
+                    </div>
+                    <!-- /.top-bar-list -->
+                </div>
+                <!-- /.top-bar -->
+                <div class="alert-success" style="position: fixed; top: 4.5rem; right: 1rem; z-index: 1050">
+                    <!-- .toast -->
+                    <div id="toast1" class="toast fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+                        <div class="toast-header">
+                            <img class="rounded mr-2" src="Content/Theme/images/avatars/bootstrap.svg" alt="" width="20">
+                            <strong class="mr-auto">Message</strong> <small>now</small>
+
+                        </div>
+                        <div class="toast-body">
+                            <p id="ToastMessage"></p>
+                        </div>
+                    </div>
+                    <!-- /.toast -->
+                </div>
+
+            </header>
+
+            <!-- /.app-header -->
+            <!-- .app-aside -->
+            <aside class="app-aside app-aside-expand-md app-aside-light">
+                <!-- .aside-content -->
+                <div class="aside-content">
+                    <!-- .aside-header -->
+                    <header class="aside-header d-block d-md-none">
+                        <!-- .btn-account -->
+                        <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside">
+                            <span class="user-avatar user-avatar-lg">
+                                <img src="<%= "http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>/GetImage.aspx?ImgID=ImgUser" alt=""></span> <span class="account-icon"><span class="fa fa-caret-down fa-lg"></span></span><span class="account-summary"><span class="account-name" id="UserName2" runat="server"></span><span class="account-description">Marketing Manager</span></span></button>
+                        <!-- /.btn-account -->
+                        <!-- .dropdown-aside -->
+                        <div id="dropdown-aside" class="dropdown-aside collapse">
+                            <!-- dropdown-items -->
+                            <div class="pb-3">
+                                <a class="dropdown-item" href="user-profile.html"><span class="dropdown-icon oi oi-person"></span>Profile</a>
+                                <a class="dropdown-item" href='<%=this.ResolveUrl("~/Login.aspx")%>'><span class="dropdown-icon oi oi-account-logout"></span>Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<%= this.ResolveUrl("~/Tickets/Index.aspx") %>">Help Center</a> <a class="dropdown-item" href="#">Ask Forum</a> <a class="dropdown-item" href="#">Keyboard Shortcuts</a>
+                            </div>
+                            <!-- /dropdown-items -->
+                        </div>
+                        <!-- /.dropdown-aside -->
+                    </header>
+                    <!-- /.aside-header -->
+                    <!-- .aside-menu -->
+                    <div class="aside-menu overflow-hidden">
+                        <!-- .stacked-menu -->
+                        <nav id="stacked-menu" class="stacked-menu">
+                            <div class="col-md-12">
+                                <div class="input-group input-group-sm input-group-search dropdown">
+                                    <%-- <div class="input-group-prepend">
+                                        <span class="input-group-text"><span class="fa fa-home"></span></span>
+                                    </div>--%>
+                                    <asp:DropDownList ID="ddlCompanyName" class="form-control form-conrol-sm" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCompanyName_SelectedIndexChanged" TabIndex="1"></asp:DropDownList>
+                                </div>
+                            </div>
+
+                            <!-- .menu -->
+                            <ul class="menu">
+                                <!-- .menu-item -->
+                                <li class="menu-item has-active">
+                                    <a href="<%= ResolveUrl("StepofOperationNew?Module=") %>" class="menu-link"><span class="menu-icon fas fa-home"></span><span class="menu-text">Home</span></a>
+                                </li>
+                                <!-- /.menu-item -->
+                                <!-- .menu-item -->
+                                <li class="menu-item has-child Module" onclick="SetItemStorage('Module')">
+                                    <a href="#" class="menu-link"><span class="menu-icon far fa-file"></span><span class="menu-text">Module's</span> </a>
+                                    <!-- child menu <span class="badge badge-warning">New</span>-->
+                                    <ul class="menu" id="Module" runat="server"></ul>
+                                    <!-- /child menu -->
+                                </li>
+                                <!-- /.menu-item -->
+                                <!-- .menu-item -->
+                                <li class="menu-item has-child Interface" onclick="SetItemStorage('Interface')">
+                                    <a href="#" class="menu-link"><span class="menu-icon fa fa-list"></span><span class="menu-text">Smartface's</span></a>
+                                    <!-- child menu -->
+                                    <ul class="menu" id="Interface" runat="server">
+                                    </ul>
+                                    <!-- /child menu -->
+                                </li>
+                                <!-- /.menu-item -->
+                                <!-- .menu-item -->
+
+                                <!-- .menu-item -->
+                                <%-- <li class="menu-item has-child">
+                  <a href="#" class="menu-link"><span class="menu-icon oi oi-browser"></span> <span class="menu-text">Layouts</span> <span class="badge badge-subtle badge-success">+4</span></a> <!-- child menu -->
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="layout-blank.html" class="menu-link">Blank Page</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-nosearch.html" class="menu-link">Header no Search</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-horizontal-menu.html" class="menu-link">Horizontal Menu</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-fullwidth.html" class="menu-link">Full Width</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-pagenavs.html" class="menu-link">Page Navs</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-pagecover.html" class="menu-link">Page Cover</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-pagecover-img.html" class="menu-link">Cover Image</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-pagesidebar.html" class="menu-link">Page Sidebar</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-pagesidebar-fluid.html" class="menu-link">Sidebar Fluid</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-pagesidebar-hidden.html" class="menu-link">Sidebar Hidden</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="layout-custom.html" class="menu-link">Custom</a>
+                    </li>
+                  </ul><!-- /child menu -->
+                </li>--%><!-- /.menu-item -->
+                                <!-- .menu-item -->
+                                <li class="menu-item" style="display: none;">
+                                    <a href="DeafultMenu.aspx?Type=8010" target="_blank" class="menu-link"><span class="menu-icon fa fa-chart-area"></span><span class="menu-text">General Flow</span></a>
+                                </li>
+                                <!-- /.menu-item -->
+                                <%--   <li class="menu-item" >
+                                    <a href="HrWinMenu.aspx" target="_blank" class="menu-link"><span class="menu-icon fa fa-chart-bar"></span><span class="menu-text">HRM Flow</span></a>
+                                </li>--%>
+                                <%-- <li class="menu-item">
+                                    <a href="StepofOperation.aspx?Module=34" target="_blank" class="menu-link"><span class="menu-icon fa fa-wrench"></span><span class="menu-text">Settings</span></a>
+                                </li>--%>
+                                <%--<li class="menu-item">
+                                    <a href="MyDashboard.aspx?Type=8000" target="_blank" class="menu-link"><span class="menu-icon fa fa-th"></span><span class="menu-text">Master Page</span></a>
+                                </li>--%>
+                                <li class="menu-item has-child Shorcut" onclick="SetItemStorage('Shorcut')">
+                                    <a href="#" class="menu-link"><span class="menu-icon fa fa-link"></span><span class="menu-text">My Shortcut</span></a>
+                                    <!-- child menu -->
+                                    <ul class="menu" id="ShorCut" runat="server">
+                                    </ul>
+                                    <!-- /child menu -->
+                                </li>
+                                <!-- /.menu-item -->
+                                <!-- .menu-header -->
+                                <li class="menu-header">Analysis </li>
+                                <!-- /.menu-header -->
+                                <!-- .menu-item -->
+                                <%--  <li class="menu-item has-child">
+                  <a href="#" class="menu-link"><span class="menu-icon oi oi-puzzle-piece"></span> <span class="menu-text">Components</span></a> <!-- child menu -->
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="component-general.html" class="menu-link">General</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-icons.html" class="menu-link">Icons</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-rich-media.html" class="menu-link">Rich Media</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-list-views.html" class="menu-link">List Views</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-sortable-nestable.html" class="menu-link">Sortable & Nestable</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-activity.html" class="menu-link">Activity</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-steps.html" class="menu-link">Steps</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-tasks.html" class="menu-link">Tasks</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="component-metrics.html" class="menu-link">Metrics</a>
+                    </li>
+                  </ul><!-- /child menu -->
+                </li>--%><!-- /.menu-item -->
+                                <!-- .menu-item -->
+                                <%--<li class="menu-item has-child">
+                  <a href="#" class="menu-link"><span class="menu-icon oi oi-pencil"></span> <span class="menu-text">Forms</span></a> <!-- child menu -->
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="form-basic.html" class="menu-link">Basic Elements</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="form-autocompletes.html" class="menu-link">Autocompletes</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="form-pickers.html" class="menu-link">Pickers</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="form-editors.html" class="menu-link">Editors</a>
+                    </li>
+                  </ul><!-- /child menu -->
+                </li>--%><!-- /.menu-item -->
+                                <!-- .menu-item -->
+
+                                <li class="menu-item has-active">
+                                    <a runat="server" id="dbAllinOne" visible="false" target="_blank" class="menu-link"><span class="menu-icon fa fa-th"></span><span class="menu-text">All In One</span></a>
+                                </li>
+                                <li class="menu-item has-child BDashboard" onclick="SetItemStorage('BDashboard')" id="DashboardArea" runat="server">
+                                    <a href="#" class="menu-link"><span class="menu-icon fa fa-meteor"></span><span class="menu-text">Smartboard</span></a>
+                                    <!-- child menu -->
+                                    <ul class="menu" runat="server" id="dbDashboard">
+                                    </ul>
+                                    <!-- /child menu -->
+                                </li>
+
+                                <li class="menu-item has-child Anagraph" onclick="SetItemStorage('Anagraph')" id="AnalysisArea" runat="server">
+                                    <a href="#" class="menu-link"><span class="menu-icon fas fa-table"></span><span class="menu-text">Analysis Graph</span></a>
+                                    <!-- child menu -->
+                                    <ul class="menu" runat="server" id="dbGraph">
+                                    </ul>
+                                    <!-- /child menu -->
+                                </li>
+
+                                <!-- /.menu-item -->
+                                <!-- .menu-item -->
+                                <%--   <li class="menu-item has-child">
+                  <a href="#" class="menu-link"><span class="menu-icon oi oi-bar-chart"></span> <span class="menu-text">Collections</span></a> <!-- child menu -->
+                  <ul class="menu">
+                    <li class="menu-item has-child">
+                      <a href="#" class="menu-link">Chart.js</a> <!-- grand child menu -->
+                      <ul class="menu">
+                        <li class="menu-item">
+                          <a href="collection-chartjs-line.html" class="menu-link">Line</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="collection-chartjs-bar.html" class="menu-link">Bar</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="collection-chartjs-radar-scatter.html" class="menu-link">Radar & Scatter</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="collection-chartjs-others.html" class="menu-link">Others</a>
+                        </li>
+                      </ul><!-- /grand child menu -->
+                    </li>
+                    <li class="menu-item">
+                      <a href="collection-flot-charts.html" class="menu-link">Flot</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="collection-inline-charts.html" class="menu-link">Inline charts</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="collection-jqvmap.html" class="menu-link">Vector Map</a>
+                    </li>
+                  </ul><!-- /child menu -->
+                </li>--%><!-- /.menu-item -->
+                                <!-- .menu-item -->
+                                <%-- <li class="menu-item has-child">
+                  <a href="#" class="menu-link"><span class="menu-icon oi oi-list-rich"></span> <span class="menu-text">Level Menu</span></a> <!-- child menu -->
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="#" class="menu-link">Menu item</a>
+                    </li>
+                    <li class="menu-item has-child">
+                      <a href="#" class="menu-link">Menu item</a> <!-- grand child menu -->
+                      <ul class="menu">
+                        <li class="menu-item">
+                          <a href="#" class="menu-link">Child item</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="#" class="menu-link">Child item</a>
+                        </li>
+                        <li class="menu-item has-child">
+                          <a href="#" class="menu-link">Child item</a> <!-- grand child menu -->
+                          <ul class="menu">
+                            <li class="menu-item">
+                              <a href="#" class="menu-link">Grand Child item</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-link">Grand Child item</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-link">Grand Child item</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-link">Grand Child item</a>
+                            </li>
+                          </ul><!-- /grand child menu -->
+                        </li>
+                        <li class="menu-item">
+                          <a href="#" class="menu-link">Child item</a>
+                        </li>
+                      </ul><!-- /grand child menu -->
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" class="menu-link">Menu item</a>
+                    </li>
+                  </ul><!-- /child menu -->
+                </li>--%><!-- /.menu-item -->
+                            </ul>
+                            <!-- /.menu -->
+                            <div class="col-md-12">
+                                <div class="input-group input-group-sm input-group-search dropdown">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><span class="fa fa-search"></span></span>
+                                    </div>
+                                    <input id="the-basics" type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- /.stacked-menu -->
+                    </div>
+                    <!-- /.aside-menu -->
+                    <!-- Skin changer -->
+                    <footer class="aside-footer border-top ptl-side-footer p-3">
+                        <button class="btn btn-light btn-block text-primary" data-toggle="skin">Night mode <i class="fas fa-moon ml-1"></i></button>
+                    </footer>
+                    <!-- /Skin changer -->
+                </div>
+                <!-- /.aside-content -->
+            </aside>
+            <!-- /.app-aside -->
+            <!-- .app-main -->
+            <main class="app-main">
+                <!-- .wrapper -->
+                <div class="wrapper">
+                    <!-- .page -->
+                    <asp:Panel class="page-message" ID="AlertArea" ClientIDMode="Static" runat="server" Visible="false" role="alert">
+                        <i class="fa fa-fw fa-info"></i>
+                        <asp:Label ID="lblmsg" ClientIDMode="Static" Text="Hello" runat="server"></asp:Label>
+                        <%--<a href="#" class="btn btn-sm btn-warning circle ml-3">Learn More</a>--%> <a href="#" class="btn btn-sm btn-icon btn-warning ml-1" aria-label="Close" onclick="$(this).parent().fadeOut()"><span aria-hidden="true"><i class="fa fa-times"></i></span></a>
+                    </asp:Panel>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <%--  <button type="button" class="btn btn-lg btn-primary btn-floated" data-toggle="modal" data-target="#exampleModalDocked" data-backdrop="false"><i class="fas fa-comment fa-lg"></i></button>
+                    <div class="modal modal-docked fade has-shown show" id="exampleModalDocked" tabindex="-1" role="dialog" aria-labelledby="exampleModalDockedLabel" style="display: block; padding-right: 17px;" aria-modal="true">
+                        <!-- .modal-dialog -->
+                        <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+                          <!-- .modal-content -->
+                          <div class="modal-content">
+                            <!-- .modal-header -->
+                            <div class="modal-header bg-primary text-white modal-body-scrolled">
+                              <div class="d-block">
+                                <p id="exampleModalDockedLabel"> Hi 👋! I'm a Modal Docked </p>
+                                <p class="text-center px-3"> You can use .modal-{lg,sm} class to in/decrease my size an put any type of content in my body. </p>
+                              </div>
+                            </div><!-- /.modal-header -->
+                            <!-- .modal-body -->
+                            <div class="modal-body py-3">
+                              <!-- .form-group -->
+                              <div class="form-group">
+                                <div class="form-label-group">
+                                  <input type="text" id="cname" class="form-control placeholder-shown" placeholder="Name" required=""> <label for="cname">Name</label>
+                                </div>
+                              </div><!-- /.form-group -->
+                              <!-- .form-group -->
+                              <div class="form-group">
+                                <div class="form-label-group">
+                                  <input type="email" id="cmail" class="form-control placeholder-shown" placeholder="Email address" required=""> <label for="cmail">Email Address</label>
+                                </div>
+                              </div><!-- /.form-group -->
+                              <button type="button" class="btn btn-lg btn-block btn-primary">Lets Chat</button> <button type="button" class="btn btn-lg btn-block btn-link" data-dismiss="modal" aria-label="Close">Close</button>
+                            </div><!-- /.modal-body -->
+                          </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                      </div>
+                    --%>
+                </div>
+                <!-- .app-footer -->
+                <footer class="app-footer fixed-bottom">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-4 text-left">
+                                        <asp:LinkButton ID="lnkbtnLedger" Visible="false" OnClientClick="return confirm('Do You want to Save?');" runat="server" OnClick="lnkbtnLedger_Click" CssClass="btn btn-primary btn-sm"><span class="flaticon-book40"></span>Ledger</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnHisprice" Visible="false" runat="server" CssClass="btn btn-primary btn-sm" OnClick="lnkbtnHisprice_Click"><span class="flaticon-book40"></span>Historical Price</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnTranList" Visible="false" runat="server" CssClass="btn btn-primary btn-sm" OnClick="lnkbtnTranList_Click"><span class="flaticon-book40"></span>Transaction List</asp:LinkButton>
+                                        <asp:CheckBox ID="chkBoxN" runat="server" Visible="false" TabIndex="10" Text="UnUsed CheckBox 1" CssClass="btn btn-primary btn-sm" AutoPostBack="true" OnCheckedChanged="chkBoxN_CheckedChanged" />
+                                        <asp:CheckBox ID="CheckBox1" runat="server" Visible="false" TabIndex="10" Text="UnUsed CheckBox 2" CssClass="btn btn-primary btn-sm" AutoPostBack="true" OnCheckedChanged="CheckBox1_CheckedChanged" />
+
+                                    </div>
+                                    <div class="col-md-4 text-primary text-center">
+                                        <div class="copyright text-black">Development By: <a href="https://www.pintechltd.com/" target="_blank" class="text-primary">Pinovation Tech Ltd. </a></div>
+
+                                    </div>
+                                    <div class="col-md-4 text-right">
+                                        <asp:LinkButton ID="lnkbtnRecalculate" Visible="false" runat="server" CssClass="btn btn-sm btn-secondary" OnClick="lnkbtnRecalculate_Click"><i class="fa fa-sync-alt" aria-hidden="true"></i> Recalculate</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnNew" runat="server" Visible="false" CssClass="btn btn-warning btn-sm" OnClick="lnkbtnNew_Click"><i class="fa fa-file-alt" aria-hidden="true"></i> New</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnAdd" runat="server" Visible="false" CssClass="btn btn-primary btn-sm" OnClick="lnkbtnAdd_Click1"><i class="fa fa-plus" aria-hidden="true"></i> Add</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnSave" Visible="false" OnClientClick="return confirm('Do You want to Save?');" runat="server" CssClass="btn btn-sm btn-success" OnClick="lnkbtnSave_Click"><i class="fa fa-save" aria-hidden="true"></i> Save</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnEdit" Visible="false" runat="server" CssClass="btn btn-success btn-sm" OnClick="lnkbtnEdit_Click"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</asp:LinkButton>
+
+                                        <asp:LinkButton ID="lnkbtnDelete" Visible="false" runat="server" OnClick="lnkbtnDelete_Click" CssClass="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i> Delete</asp:LinkButton>
+                                        <asp:LinkButton ID="btnClose" Visible="false" runat="server" CssClass="btn btn-warning btn-sm " OnClick="btnClose_Click"><i class="fa fa-times" aria-hidden="true"></i>
+Close</asp:LinkButton>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                </footer>
+                <!-- /.app-footer -->
+                <!-- /.wrapper -->
+
+            </main>
+            <!-- /.app-main -->
+        </div>
+        <!-- /.app -->
+
+        <%-- <script src='<%= "http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>Content/Theme/select2.min.js'></script>
+        <script src='<%= "http://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath %>Content/Theme/select2-demo.js'></script>
+        --%>
+    </form>
+    <!-- BEGIN BASE JS -->
+    <script>
+        $(document).ready(function () {
+            GetNotifications();
+            //  setTimeout(function () { manipulate(); }, 3000);
+            // manipulate(); /// 20-05-2021
+            setTimeout($('#AlertArea').fadeOut(5000), 5000);
+            //auto complete
+            var url = $('#<%=this.ParentDir.ClientID %>').val();
+            $(function () {
+                $('#the-basics').autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: '<%=ResolveUrl("~/Service/UserService.asmx/GetSearchUrl") %>',
+                            data: '{strkeys: "' + request.term + '" }',
+                            dataType: 'json',
+                            type: 'POST',
+                            contentType: 'application/json; charset=utf-8',
+                            success: function (data) {
+                                //console.log(request.term);
+                                console.log(data);
+                                response($.map(data.d, function (item) {
+                                    //return { value: "<a href=''>"+item.dscrption+"</a>" }
+                                    return {
+                                        dscrption: item.dscrption,
+                                        urlinf: item.urlinf,
+                                        floc: item.floc,
+                                        qrytype1: item.qrytype1,
+                                        json: item
+                                    }
+                                }))
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                // alert(textStatus);
+                            }
+                        });
+                    }, focus: function (event, ui) {
+                        //  $('#the-basics').val(ui.item.dscrption);
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        // $('#the-basics').val(ui.item.dscrption);
+                        return false;
+                    },
+                }).data('ui-autocomplete')._renderItem = function (ul, item) {
+
+                    return $('<li>')
+                        .append("<a href='" + url + item.floc + '/' + item.urlinf + item.qrytype1 + "' target='_blank'>" + item.dscrption + "  </a>")
+                        .appendTo(ul);
+                };
+            });
+
+        });
+
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-116692175-1');
+
+
+        function GetNotifications() {
+            try {
+                var url = '<%=ResolveClientUrl("~/Service/UserService.asmx/GetNotAndMessage")%>';
+                var userid = '';
+
+                var objnotification = new RealERPScript();
+                var data = objnotification.GetNotifications(userid, url);
+                console.log('notification', data)
+
+                var row = "";
+                var img = "";
+                var count = 0;
+                var all = "";
+                var imgstrng = "";
+                var imgextract = "";
+                $("#repNotificmsg").html("");
+                $.each(data, function (k, v) {
+                    if (v.ntype == "") {
+
+                        console.log(v.sendphoto);
+
+                        imgstrng = v.sendphoto;
+
+
+                        imgextract = imgstrng.substring(2);
+                        //  row += '<li class="overflow-wrap: break-word; word-break:break-word!important;">' + '<a target=_blank href=' + encodeURI('../../Message/GetNotification.aspx?Id=' + v.notifyid + '&RefId=' + v.refid + '&notiytype=' + v.notiytype + '&ntype=' + v.ntype) + '>' + img + '&nbsp;' + v.meassage + '</a>' + '</li>';
+                        row += '<a href="' + encodeURI('../../Tickets/GetNotification?Id=' + v.notifyid + '&RefId=' + v.refid + '&notiytype=' + v.notiytype + '&ntype=' + v.ntype) + '" class="dropdown-item unread">' +
+                            '<div class="user-avatar">' +
+                            '<img src="da' + imgextract + '" alt="">' +
+                            '</div>' +
+                            '<div class="dropdown-item-body">' +
+                            '<p class="subject">' + v.eventitle + '</p>' +
+                            '<p class="product-name text-truncate">' + v.meassage + '</p>' +
+                            ' <span class="date">' + v.ncreated + '</span>' +
+                            '</div>' +
+
+                            '</a>';
+                        count++;
+                    }
+                });
+                $("#repNotificmsg").append(row);
+                //  $("#lblallpop").text(count);
+
+            }
+            catch (e) {
+                // console.log("error");
+                var urll = '<%=ResolveClientUrl("~/Tickets/GetNotification?Id=All&RefId=&notiytype=&ntype=")%>';
+                //location.href = urll;
+            }
+        }
+    </script>
+
+</body>
+</html>
+

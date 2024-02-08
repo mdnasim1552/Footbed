@@ -1,0 +1,130 @@
+﻿ @page {
+  size: auto;
+  margin: 0;
+       }
+
+@media print {
+.header, .hide { visibility: hidden }
+}
+.mce-content-body{
+    
+    padding:40px 48px 8px 140px !important;
+}
+.mce-content-body strong{
+    font-weight:bold;
+}
+.mce-content-body p{
+    line-height:12px !important;
+    margin:2px 0 !important;
+    font-family:Calibri !important;
+
+}
+.mce-content-body ol li, .mce-content-body ul li {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	color: #626262;
+    line-height:12px !important;    
+    font-family:Calibri !important;
+}
+.letbody  ul li, .letbody  ol li{
+    line-height:12px !important;  
+    font-size:12px;  
+    font-family:Calibri !important;
+}
+.mce-content-body table caption, .mce-content-body table td, .mce-content-body table th{
+    padding:5px 100px;
+}
+
+p.cfHead{
+    font-weight:bold;
+    
+    font-size:30px !important;
+    text-decoration:underline;
+    text-align:center !important;
+    color:black !important;
+    }
+
+.mce-content-body p.cfHeadff{
+    text-align:right !important;
+   
+}
+
+div.tbodystyle{
+    margin-left:300px !important;
+}
+
+.mce-content-body table tr td{
+    border: 0px solid #aaa;
+    border-spacing: 0;
+    padding:0;
+  
+}
+.mce-content-body table.tblnoa {
+    border:0;
+}
+.mce-content-body table.tblnoa tr td{
+    border: 0;
+    border-spacing: 0;
+    padding:0;
+  
+}
+
+.mce-content-body table.tblnoa table tr td{
+    border: 0;
+    border-spacing: 0;
+    padding:0;
+  
+}
+
+.mce-content-body p.pMargin{
+    margin:10px 0 30px;
+}
+.mce-content-body p.pImage{
+    margin-top:50px;
+}
+.mce-content-body p.pFottext{
+    line-height:30px;
+}
+.printHeader{
+    width:100%;
+    height:100px; 
+    
+}
+.pntHeadJon{
+    margin-top:100px;
+}
+.comlogoprint{
+    width:120px;
+    float:left;
+}
+.compDet{
+    width:550px;
+    float:right;
+}
+.compName{
+    font-size:20px;
+    font-weight:bold;
+}
+.compAdd{
+
+}
+.mce-content-body p.pUname{
+    margin:0 !important;
+    line-height:12px;
+}
+
+/*Edison*/
+.mce-content-body strong.subj{
+    margin:10px 0;
+}
+/*.mce-content-body .letbody p{
+    margin:5px 0;
+    font-size:12px;
+    font-family:Calibri;
+    line-height:12px !important
+}*/
+.mce-content-body .letbody p{
+    line-height: 12px !important;
+    margin: 2px 0 !important;
+    font-family: Calibri !important;
+}
